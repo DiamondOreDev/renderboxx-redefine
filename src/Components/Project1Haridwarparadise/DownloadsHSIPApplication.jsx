@@ -1,6 +1,6 @@
 import React from 'react';
 import map from '../../assets/map.jpg';
-import pdfFile from '../../assets/HSIP-FORM.pdf'; // Replace with the path to your PDF
+import pdfFile from '../../assets/HSIP-Form.pdf'; // Replace with the path to your PDF
 
 const DownloadsHSIPApplication = () => {
   return (
