@@ -15,7 +15,7 @@ const AboutUsPage = () => {
   return (
     <>
       <Sidebar />
-      <div className="relative ml-20  h-screen">
+      <div className="relative ml-20 overflow-hidden h-screen">
         <div className="relative w-[332px] md:w-full  h-2/3">
           <img
             src={aboutimage} // Replace with your image URL
