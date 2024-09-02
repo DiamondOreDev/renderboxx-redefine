@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import haridwar from '../../assets/haridwar2.png'
 
+
 // Sample project data
 const projects = [
   {
@@ -10,9 +11,9 @@ const projects = [
     link: "/haridwarparadise",
   },
   {
-    title: "Eco-Friendly Design",
+    title: "Devprayag Paradise",
     image: "https://tff-wr.imgix.net//img/project-thumbnails/rawn-kingopenschool-03-thumbnail.jpg?w=2100&q=70&auto=format,compress",
-    link: "#",
+    link: "/devprayagparadise",
   },
   {
     title: "Luxury Villa",
@@ -23,7 +24,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="mx-auto py-12 px-4 sm:px-6 lg:px-8 mb-4 ">
+    <div className="mx-auto py-12 px-4 sm:px-6 lg:px-8 mb-4 " id="projects">
       <h2 className="text-5xl font-bold text-center mb-12 headings">Our Projects</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -16,18 +16,18 @@ const AboutUsPage = () => {
     <>
       <Sidebar />
       <div className="relative  h-screen">
-        <div className="relative w-full h-2/3">
+        <div className="relative w-[340px] md:w-full ml-20 h-2/3">
           <img
             src={aboutimage} // Replace with your image URL
             alt="About Us"
             className="w-full h-full object-cover"
           />
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center mt-20">
-            <p className="text-gray-100 font-semibold text-2xl">
+          <div className="absolute inset-0 flex flex-col items-center justify-center mx-auto  mt-20">
+            <p className="text-gray-100 font-semibold text-sm   md:text-2xl text-wrap">
               DESIGNED FOR LIFE, DRIVEN BY INNOVATION
             </p>
-            <h1 className="text-white text-8xl font-bold headings">ABOUT US</h1>
+            <h1 className="text-white text-5xl md:text-8xl font-bold headings">ABOUT US</h1>
           </div>
         </div>
 
@@ -37,7 +37,7 @@ const AboutUsPage = () => {
             <p className="text-lg p-8">
               <h1 className="headings text-6xl ">COMPANY PROFILE</h1>
               <div className="w-40 h-1 bg-primary mb-6"></div>
-              <p className="text-xl">
+              <p className="text-xl text-justify">
                 Over 17 years, Redefine Group has single mindedly focused on
                 innovative ideas. Taking ordinary spaces and transforming them
                 into something spectacular. Redefine group is leading real
@@ -73,7 +73,7 @@ const AboutUsPage = () => {
             <h1 className="headings text-6xl uppercase">Sovereignty</h1>
             <div className="w-40 h-1 bg-primary mb-10"></div>
 
-                <div className="grid grid-cols-6 gap-4">
+                <div className="grid md:grid-cols-6 gap-4">
 
                     <div className="col-span-4 text-justify text-lg text-gray-700">
 

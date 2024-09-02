@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../../Components/Home/Sidebar";
 import HeroCarousel from "../../Components/Home/HeroCarousel";
 import Stats from "../../Components/Home/Stats";
@@ -10,6 +10,13 @@ import Footer from "../../Components/Home/Footer";
 import Projects from "../../Components/Home/Projects";
 
 const HomeMain = () => {
+
+    
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
   return (
     <div>
       <div className="flex   ">

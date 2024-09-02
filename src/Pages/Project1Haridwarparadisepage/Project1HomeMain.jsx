@@ -9,8 +9,13 @@ import Conectivity from '../../Components/Project1Haridwarparadise/Conectivity'
 import DownloadsHSIPApplication from '../../Components/Project1Haridwarparadise/DownloadsHSIPApplication'
 import Gallery from '../../Components/Project1Haridwarparadise/Gallery'
 import ContactUs from '../../Components/Project1Haridwarparadise/ContactUs'
+import Footer from '../../Components/Project1Haridwarparadise/Footer'
 
 const Project1HomeMain = () => {
+
+
+
+
   return (
     <div>
       <Nav/>
@@ -23,6 +28,8 @@ const Project1HomeMain = () => {
       <DownloadsHSIPApplication/>
       <Gallery/>
       <ContactUs/>
+      <Footer/>
+      
     </div>
   )
 }
