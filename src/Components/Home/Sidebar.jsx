@@ -33,17 +33,12 @@ const Sidebar = () => {
         </button>
       </div>
 
-      <div className="absolute bottom-12 mt-auto ">
-        <img
-          src={logo}
-          alt="logoimage of redefinegroup"
-          className="w-full z-60 h-full -rotate-90 "
-        />
-        {/* <div className="text-3xl font-bold px-2 transform mb-4 -rotate-90 tracking-wider headings">
-          <p className="bg-blue-600 px-2">  RE<span className="text-primary font-extrabold ml-1 mr-1">D</span>
-          EFINE </p>
-        <span className="bg-yellow-400 px-2">GROUP</span>
-        </div> */}
+      <div className="relative mt-auto mb-4">
+        {/* <img src={logo} alt="logoimage of redefinegroup"  className="w-full z-60 h-auto -rotate-90 "/> */}
+        <div className="text-4xl font-bold transform mb-4 -rotate-90 tracking-wider headings">
+          RE<span className="text-primary font-extrabold ml-1 mr-1">D</span>
+          EFINE <span className="">GROUP</span>
+        </div>
       </div>
 
       {/* Drawer */}
@@ -58,11 +53,11 @@ const Sidebar = () => {
           >
             <div className=" flex">
               <div className="flex flex-col  w-full py-10 z-10">
-                <img src={logo} alt="" className="px-6" />
-                {/* <div className="text-5xl flex flex-col text-center  font-extrabold mb-4 headings">
+                {/* <img src={logo} alt="" className="px-6" /> */}
+                <div className="text-5xl flex flex-col text-center  font-extrabold mb-4 headings">
                   <p>REDEFINE</p>
                   <p className="text-md ">GROUP</p>
-                </div> */}
+                </div>
                 <ul className="space-y-4 text-center mt-10 md:text-2xl text-md">
                   <Link to={"/"}>
                     <li className="hover:bg-primary p-2 group-hover:text-gray-800 group  cursor-pointer">
@@ -116,18 +111,18 @@ const Sidebar = () => {
                 </button>
 
                 <div className="relative mt-auto  mb-10">
-                  <img
+                  {/* <img
                     src={logo}
                     alt=""
                     className="w-auto h-auto transform -rotate-90"
-                  />
-                  {/* <div className="text-4xl font-bold transform mb-4 -rotate-90 headings tracking-wider">
+                  /> */}
+                  <div className="text-4xl font-bold transform mb-4 -rotate-90 headings tracking-wider">
                     RE
                     <span className="text-primary font-extrabold ml-1 mr-1">
                       D
                     </span>
                     EFINE <span className="">GROUP</span>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </div>
