@@ -4,11 +4,11 @@ import haridwar from '../../assets/haridwar.png'
 const About = () => {
   return (
     <>
-      <div className="py-10 mt-10">
-        <div className="flex items-center  px-10">
-          <h1 className="headingp1 text-9xl  " style={{textShadow: "8px 4px 5px 3px gray"}}>Haridwar Paradise</h1>
+      <div className="md:py-10 py-6 mt-10">
+        <div className="flex flex-col md:flex md:flex-row  items-center  px-10">
+          <h1 className="headingp1 md:text-9xl text-6xl  " style={{textShadow: "8px 4px 5px 3px gray"}}>Haridwar Paradise</h1>
 
-          <p className="ml-6 text-wrap text-justify text-lg">
+          <p className="md:ml-6 text-wrap text-justify text-lg md:mt-0 mt-3">
             Haridwar. Nestled in Haridwar’s serene and divine charm, Haridwar
             Paradise offers modern living spaces with top-notch architecture,
             design, and amenities. It seamlessly blends contemporary living with

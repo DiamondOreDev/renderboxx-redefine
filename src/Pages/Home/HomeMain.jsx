@@ -12,7 +12,7 @@ import Projects from "../../Components/Home/Projects";
 const HomeMain = () => {
   return (
     <div>
-      <div className="flex  overflow-hidden ">
+      <div className="flex   ">
         {/* Sidebar (fixed and narrow on the left) */}
         <Sidebar />
 
@@ -23,7 +23,7 @@ const HomeMain = () => {
           <AboutusSection/>
           <Projects/>
           <Awards/>
-          <Testimonials/>
+          {/* <Testimonials/> */}
           <ContactUs/>
           <Footer/>
         </div>

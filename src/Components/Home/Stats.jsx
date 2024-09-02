@@ -4,16 +4,16 @@ const Stats = () => {
   return (
     <>
       <div className="w-full">
-        <div className="py-20 max-w-5xl flex flex-col justify-between mx-auto items-center">
+        <div className="py-20 max-w-5xl flex flex-col  md:justify-between mx-auto items-center">
           <h1 className="text-5xl font-semibold text-center headings">Legacy moving forward</h1>
-          <p className="text-gray-600 mt-6 text-center text-gray-800">
+          <p className="text-gray-600 mt-6 text-center text-gray-800 px-10 md:px-0">
             In a considerably short period of time, Ace has achieved excellence,
             client satisfaction, and trust and has efficiently completed landmark
             projects without compromising on quality and timelines.
           </p>
 
           {/* Responsive Flex Container for Stats */}
-          <div className="flex flex-wrap w-full justify-between items-center mt-10 gap-10">
+          <div className="flex flex-wrap w-full justify-center md:justify-between items-center mt-10 gap-10">
             {/* Stat Item */}
             <div className="flex flex-col justify-center items-center w-40">
               <img

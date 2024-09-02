@@ -48,7 +48,7 @@ const NearByTownShips = () => {
   return (
     <>
     
-    <section className="py-16 ">
+    <section className="py-10 md:py-16 ">
       <div className=" px-0">
         <h1 className="text-center headingp1 text-5xl mb-2">Near By Township</h1>
         <div className="h-1 w-80 bg-p1 mx-auto mb-10"></div>

@@ -67,9 +67,12 @@ const Sidebar = () => {
                     Home
                   </li>
                   </Link>
-                  <li className="hover:bg-primary p-2 cursor-pointer">
+
+                  <Link to={'/aboutus'}>
+                  <li className="hover:bg-primary p-2 group-hover:text-gray-800 group mt-4 cursor-pointer">
                     About Us
                   </li>
+                  </Link>
                   <li className="hover:bg-primary p-2  cursor-pointer">
                     Achievements
                   </li>

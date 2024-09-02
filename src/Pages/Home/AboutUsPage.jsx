@@ -1,6 +1,7 @@
 import React from "react";
 import aboutimage from "../../assets/aboutimage.jpg";
 import Sidebar from "../../Components/Home/Sidebar";
+import Footer from "../../Components/Home/Footer";
 
 const AboutUsPage = () => {
   return (
@@ -22,10 +23,10 @@ const AboutUsPage = () => {
           </div>
         </div>
 
-        <div className="  p-8 ml-20">
+        <div className="   ml-20">
           {/* Comapany profile */}
           <div>
-            <p className="text-lg">
+            <p className="text-lg p-8">
               <h1 className="headings text-6xl ">COMPANY PROFILE</h1>
               <div className="w-40 h-1 bg-primary mb-6"></div>
               <p className="text-xl">
@@ -47,7 +48,7 @@ const AboutUsPage = () => {
 
           {/* Media Coverage  */}
 
-          <div className="mt-20">
+          <div className="mt-20 p-8">
             <h1 className="headings text-6xl ">MEDIA COVERAGE</h1>
             <div className="w-40 h-1 bg-primary mb-10"></div>
 
@@ -59,7 +60,7 @@ const AboutUsPage = () => {
 
           {/* WORDS FROm CHAIRUMAN */}
 
-            <div className="mt-10">
+            <div className="mt-10 p-8">
 
             <h1 className="headings text-6xl uppercase">Sovereignty</h1>
             <div className="w-40 h-1 bg-primary mb-10"></div>
@@ -83,8 +84,11 @@ const AboutUsPage = () => {
 
             </div>
 
+            <Footer/>
+
         </div>
       </div>
+     
     </>
   );
 };

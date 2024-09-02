@@ -2,11 +2,12 @@ import React from "react";
 
 const ContactUs = () => {
   return (
+    <>
     <section class="" id="contact">
       <div class="mx-auto  px-4 py-16 sm:px-6 lg:px-8 lg:py-10">
         <div class="mb-4">
           <div class="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
-            <h2 class="font-heading headingp1 mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl">
+            <h2 class="font-heading headingp1 mb-4 font-bold tracking-tight text-gray-900  text-3xl sm:text-5xl">
               Contact Us
             </h2>
             <div className="h-1 w-40 bg-p1 mx-auto mb-10"></div>
@@ -35,13 +36,13 @@ const ContactUs = () => {
                   </svg>
                 </div>
                 <div class="ml-4 mb-4">
-                  <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">
+                  <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 ">
                     Our Address
                   </h3>
-                  <p class="text-gray-600 dark:text-slate-400">
+                  <p class="text-gray-600 ">
                     Doon Hatcheries Limited B-48A GF, Main Road, Kalka Ji 
                   </p>
-                  <p class="text-gray-600 dark:text-slate-400">
+                  <p class="text-gray-600 ">
                   New Delhi – 110019
                   </p>
                 </div>
@@ -66,13 +67,13 @@ const ContactUs = () => {
                   </svg>
                 </div>
                 <div class="ml-4 mb-4">
-                  <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">
+                  <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 ">
                     Contact
                   </h3>
-                  <p class="text-gray-600 dark:text-slate-400">
+                  <p class="text-gray-600 ">
                     Mobile: +91 9582000035
                   </p>
-                  <p class="text-gray-600 dark:text-slate-400">
+                  <p class="text-gray-600 ">
                     Mail: support@redefinegroup.com
                   </p>
                 </div>
@@ -80,7 +81,7 @@ const ContactUs = () => {
             </ul>
           </div>
           <div class="card " id="form">
-            <h2 class="mb-4 text-2xl font-bold dark:text-white">
+            <h2 class="mb-4 text-2xl font-bold ">
               Ready to Get Started?
             </h2>
             <form id="contactForm">
@@ -96,7 +97,7 @@ const ContactUs = () => {
                       id="name"
                       autocomplete="given-name"
                       placeholder="Your name"
-                      class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                      class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
                       name="name"
                     />
                   </div>
@@ -110,7 +111,7 @@ const ContactUs = () => {
                       id="email"
                       autocomplete="email"
                       placeholder="Your email address"
-                      class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                      class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
                       name="email"
                     />
                   </div>
@@ -125,7 +126,7 @@ const ContactUs = () => {
                       id="email"
                       autocomplete="email"
                       placeholder="Your Phone"
-                      class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                      class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
                       name="phone"
                     />
                   </div>
@@ -141,7 +142,7 @@ const ContactUs = () => {
                     cols="30"
                     rows="4"
                     placeholder="Write your message..."
-                    class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                    class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
                   ></textarea>
                 </div>
               </div>
@@ -158,6 +159,8 @@ const ContactUs = () => {
         </div>
       </div>
     </section>
+    <iframe class="img" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11633.956685434985!2d77.9968439676084!3d29.898977706444757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDUzJzM0LjUiTiA3OMKwMDAnNDAuOCJF!5e0!3m2!1sen!2sin!4v1457603749267" width="100%" height="450" frameborder="0" allowfullscreen=""></iframe>
+    </>
   );
 };
 

@@ -36,7 +36,7 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <div className="relative  h-screen overflow-hidden">
+    <div className="relative  h-screen  ">
       <AnimatePresence>
         {images.map(
           (image, index) =>
@@ -47,7 +47,7 @@ const HeroCarousel = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.75 }}
-                className="absolute w-full h-full"
+                className="absolute  w-full h-full"
               >
                 {/* Image */}
                 <img
@@ -64,7 +64,7 @@ const HeroCarousel = () => {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.75 }}
-                  className="absolute  headings inset-0 flex flex-col items-center justify-center text-white text-7xl font-bold text-center"
+                  className="absolute  headings inset-0 flex flex-col items-center justify-center text-white text-5xl md:text-7xl text-wrap font-bold text-center"
                 >
                   {image.heading}
                   <p className="bg-primary rounded-md px-10 py-2 text-gray-700 text-lg mt-4">

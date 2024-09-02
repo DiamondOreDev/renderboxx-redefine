@@ -14,7 +14,7 @@ const ContactUs = () => {
 
           <div className="absolute inset-0 flex flex-col items-center justify-center mt-12">
             <h1
-              className="text-5xl headings text-gray-100 text-wrap uppercase "
+              className="text-2xl text-center md:text-5xl headings text-gray-100 text-wrap uppercase "
               style={{ textShadow: "4px 5px 7px gray" }}
             >
               Your next architectural masterpiece awaits

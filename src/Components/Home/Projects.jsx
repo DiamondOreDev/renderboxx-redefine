@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import haridwar from '../../assets/haridwar2.png'
 
 // Sample project data
 const projects = [
   {
     title: "Haridwar Paradise",
-    image: "https://tff-wr.imgix.net//img/project-thumbnails/thumbnail-rawn-tanglewood-tli-day2-v.jpg?w=2400&q=70&auto=format,compress",
+    image: haridwar,
     link: "/haridwarparadise",
   },
   {
@@ -40,6 +41,7 @@ const Projects = () => {
               <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <Link
                   to={project.link}
+                  target="_blank"
                   className="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition-colors duration-300"
                 >
                   Visit Project

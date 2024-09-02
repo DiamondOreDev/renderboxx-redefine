@@ -155,7 +155,7 @@ const Gallery = () => {
           {categories.map((category) => (
             <button
               key={category.id}
-              className={`px-4 py-2 m-2 rounded-lg border-2 ${
+              className={`md:px-4 py-2 m-2 md:m-1 px-2 md:text-lg text-[10px] rounded-lg border-2 ${
                 activeCategory === category.id ? 'bg-p1 text-white' : 'bg-white text-gray-800'
               } border-p1`}
               onClick={() => setActiveCategory(category.id)}
