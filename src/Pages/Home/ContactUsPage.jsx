@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../../Components/Home/Sidebar";
 import Footer from "../../Components/Home/Footer";
 
 const ContactUsPage = () => {
+
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
     <Sidebar/>

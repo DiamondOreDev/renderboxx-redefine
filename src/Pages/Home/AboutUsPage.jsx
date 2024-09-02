@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import aboutimage from "../../assets/aboutimage.jpg";
 import Sidebar from "../../Components/Home/Sidebar";
 import Footer from "../../Components/Home/Footer";
 
 const AboutUsPage = () => {
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
+  
   return (
     <>
       <Sidebar />
