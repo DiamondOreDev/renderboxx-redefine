@@ -15,8 +15,8 @@ const AboutUsPage = () => {
   return (
     <>
       <Sidebar />
-      <div className="relative  h-screen">
-        <div className="relative w-[340px] md:w-full ml-20 h-2/3">
+      <div className="relative ml-20  h-screen">
+        <div className="relative w-[332px] md:w-full  h-2/3">
           <img
             src={aboutimage} // Replace with your image URL
             alt="About Us"
@@ -31,10 +31,10 @@ const AboutUsPage = () => {
           </div>
         </div>
 
-        <div className="   ml-20">
+        <div className="   ">
           {/* Comapany profile */}
           <div>
-            <p className="text-lg p-8">
+            <p className="text-lg p-4 md:p-8">
               <h1 className="headings text-6xl ">COMPANY PROFILE</h1>
               <div className="w-40 h-1 bg-primary mb-6"></div>
               <p className="text-xl text-justify">
@@ -58,7 +58,7 @@ const AboutUsPage = () => {
 
           <div className="mt-20 p-8">
             <h1 className="headings text-6xl ">MEDIA COVERAGE</h1>
-            <div className="w-40 h-1 bg-primary mb-10"></div>
+            <div className="w-full md:w-40 h-1 bg-primary mb-10"></div>
 
             <img
               src="https://redefinegroup.com/images/Media-Coverage.jpg"
@@ -68,9 +68,9 @@ const AboutUsPage = () => {
 
           {/* WORDS FROm CHAIRUMAN */}
 
-            <div className="mt-10 p-8">
+            <div className="mt-10 p-4 md:p-8">
 
-            <h1 className="headings text-6xl uppercase">Sovereignty</h1>
+            <h1 className="headings text-5xl md:text-6xl uppercase">Sovereignty</h1>
             <div className="w-40 h-1 bg-primary mb-10"></div>
 
                 <div className="grid md:grid-cols-6 gap-4">

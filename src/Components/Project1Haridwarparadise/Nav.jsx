@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import haridwarlogo from '../../assets/haridwarlogo.png'
 
 const Nav = () => {
   const [navbar, setNavbar] = useState(false);
@@ -30,7 +31,7 @@ const Nav = () => {
         <div className="flex-shrink-0">
           <img
             className="h-20 w-auto"
-            src="https://www.haridwarparadise.com/images/logo.png" // Replace with your logo URL
+            src={haridwarlogo} // Replace with your logo URL
             alt="Logo"
           />
         </div>

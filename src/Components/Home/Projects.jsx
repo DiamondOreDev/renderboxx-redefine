@@ -1,18 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import haridwar from '../../assets/haridwar2.png'
+import devprayaglogo from '../../assets/devprayaglogo.png'
+import haridwarlogo from '../../assets/haridwarlogo.png'
+
 
 
 // Sample project data
 const projects = [
   {
     title: "Haridwar Paradise",
-    image: haridwar,
+    image: haridwarlogo,
     link: "/haridwarparadise",
   },
   {
     title: "Devprayag Paradise",
-    image: "https://tff-wr.imgix.net//img/project-thumbnails/rawn-kingopenschool-03-thumbnail.jpg?w=2100&q=70&auto=format,compress",
+    image: devprayaglogo,
     link: "/devprayagparadise",
   },
   {
@@ -29,14 +32,14 @@ const Projects = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div key={index} className="relative overflow-hidden group">
+          <div key={index} className="relative overflow-hidden group ">
             {/* Image Container with Overlay */}
             <div className="relative">
               {/* Project Image with hover effect */}
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-80 object-contain transition-transform bg-black duration-500 group-hover:scale-105"
               />
               {/* Overlay with hover effect */}
               <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">

@@ -22,7 +22,7 @@ const ContactUsPage = () => {
             {/* <p className="text-gray-100 font-semibold text-2xl">
               DESIGNED FOR LIFE, DRIVEN BY INNOVATION
             </p> */}
-            <h1 className="text-white text-4xl md:text-8xl font-bold headings">
+            <h1 className="text-white text-5xl md:text-8xl ml-10 md:ml-0 font-bold headings">
               Contact US
             </h1>
           </div>
@@ -32,7 +32,7 @@ const ContactUsPage = () => {
 
         <div className="w-full">
           <iframe
-            className="w-[91vw] mx-auto p-6 ml-20 overflow-hidden"
+            className="w-[80vw] md:w-[91vw] mx-auto p-6 ml-20 overflow-hidden"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14021.334908844325!2d77.23933369831319!3d28.529687102942304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce1638ba50b35%3A0x4ecd5ee2a5c81b24!2sDDA%20Flats%20Kalkaji%2C%20Harijan%20Colony%2C%20Block%20B%2C%20Kalkaji%2C%20New%20Delhi%2C%20Delhi%20110019!5e0!3m2!1sen!2sin!4v1724747481095!5m2!1sen!2sin"
             width="600"
             height="450"
@@ -52,7 +52,7 @@ const ContactUsPage = () => {
               />
 
               <div className="absolute inset-0 flex flex-col items-start justify-start mt-12">
-                <div className="grid md:grid-cols-6 md:gap-20 ml-32">
+                <div className="grid md:grid-cols-6 md:gap-20 ml-24 p-4 md:p-0 md:ml-32">
                   <div className="flex flex-col space-y-10 col-span-2">
                     <h1 className="uppercase headings text-5xl text-gray-100">
                       Contact Us
@@ -70,7 +70,7 @@ const ContactUsPage = () => {
                   </div>
 
                   <div className="col-span-4">
-                    <form class="max-w-full">
+                    <form class="max-w-full ">
                       <div class="relative z-0 w-full mb-8 group">
                         <input
                           type="email"
