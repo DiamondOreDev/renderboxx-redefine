@@ -105,10 +105,11 @@ const Footer = () => {
                     className="bg-gray-600 p-2 hover:bg-red-600 group"
                     rel="noopener noreferrer"
                   >
+
                     <svg
                       className="h-8 w-8 font-bold text-gray-400 group-hover:text-white"
                       viewBox="0 0 24 24"
-                      fill="currentColor"
+                      fill="none"
                       stroke="currentColor"
                       stroke-width="2"
                       stroke-linecap="round"
