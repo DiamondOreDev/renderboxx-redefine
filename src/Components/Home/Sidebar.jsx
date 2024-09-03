@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import logo from "../../assets/redefinelogo.png";
-import icon1 from '../../assets/1.png'
-import icon2 from '../../assets/2.png';
-import icon3 from '../../assets/3.png';
-import icon4 from '../../assets/4.png';
+import icon1 from "../../assets/1.png";
+import icon2 from "../../assets/2.png";
+import icon3 from "../../assets/3.png";
+import icon4 from "../../assets/4.png";
 
 const Sidebar = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -37,12 +37,11 @@ const Sidebar = () => {
         </button>
       </div>
 
-      <div className="flex flex-col space-y-12 mt-10">
-        <img src={icon1} alt=""  className=" w-full h-full"/>
-        <img src={icon2} alt=""  className=""/>
-        <img src={icon3} alt=""  className=""/>
-        <img src={icon4} alt=""  className=""/>
-       
+      <div className="flex flex-col space-y-6 mt-6">
+        <img src={icon1} alt="" className=" w-full h-full" />
+        <img src={icon2} alt="" className="" />
+        <img src={icon3} alt="" className="" />
+        <img src={icon4} alt="" className="" />
       </div>
 
       <div className="relative mt-auto mb-4">
@@ -66,7 +65,7 @@ const Sidebar = () => {
             <div className=" flex">
               <div className="flex flex-col  w-full py-10 z-10">
                 {/* <img src={logo} alt="" className="px-6" /> */}
-                
+
                 <div className="text-5xl flex flex-col text-center  font-extrabold mb-4 headings">
                   <p>REDEFINE</p>
                   <p className="text-md ">GROUP</p>
@@ -123,13 +122,12 @@ const Sidebar = () => {
                   </svg>
                 </button>
 
-                <div className="flex flex-col space-y-12 mt-10">
-        <img src={icon1} alt=""  className=" w-full h-full"/>
-        <img src={icon2} alt=""  className=""/>
-        <img src={icon3} alt=""  className=""/>
-        <img src={icon4} alt=""  className=""/>
-       
-      </div>
+                <div className="flex flex-col space-y-6 mt-6">
+                  <img src={icon1} alt="" className=" w-full h-full" />
+                  <img src={icon2} alt="" className="" />
+                  <img src={icon3} alt="" className="" />
+                  <img src={icon4} alt="" className="" />
+                </div>
 
                 <div className="relative mt-auto  mb-10">
                   {/* <img

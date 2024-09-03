@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import aboutimage from "../../assets/aboutimage.jpg";
 import Sidebar from "../../Components/Home/Sidebar";
 import Footer from "../../Components/Home/Footer";
+import media1 from '../../assets/media1.png';
+import media2 from '../../assets/media2.png'
 
 const AboutUsPage = () => {
 
@@ -60,9 +62,15 @@ const AboutUsPage = () => {
             <h1 className="headings text-6xl ">MEDIA COVERAGE</h1>
             <div className="w-full md:w-40 h-1 bg-primary mb-10"></div>
 
+            <div className="flex  md:flex justify-between md:px-20 md:block hidden">
+              <img src={media1} alt="" />
+              <img src={media2} alt="" />
+            </div>
+
             <img
               src="https://redefinegroup.com/images/Media-Coverage.jpg"
               alt=""
+              className="md:hidden block"
             />
           </div>
 
