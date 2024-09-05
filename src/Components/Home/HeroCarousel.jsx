@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import v1 from '../../assets/vedio2.mp4'
+import v1 from '../../assets/mainvedio.mp4'
 import { Link } from "react-router-dom";
 
 const headings = [
@@ -61,7 +61,7 @@ const HeroCarousel = () => {
         </AnimatePresence>
 
         {/* Static Subheading */}
-        <Link to={'/aboutus'}className="bg-primary rounded-md px-10 py-2 text-gray-700 text-lg mt-40">
+        <Link to={'/aboutus'}className="bg-primary rounded-md px-10 py-2 text-gray-100 text-lg mt-40">
           Explore More
         </Link>
       </div>
