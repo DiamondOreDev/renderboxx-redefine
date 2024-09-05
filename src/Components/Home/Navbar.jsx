@@ -1,15 +1,33 @@
 import React, { useState, useEffect, useRef } from 'react';
 import haridwarlogo from '../../assets/haridwarlogo.png';
 import logo from "../../assets/redefinelogo.png";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showSubmenu, setShowSubmenu] = useState(false);
   const [submenuTimer, setSubmenuTimer] = useState(null);
-
   const menuRef = useRef(null); // Ref to track clicks outside the menu
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Scroll to section
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Check the current URL and scroll to the section on load
+  useEffect(() => {
+    if (location.hash === '#projects') {
+      scrollToSection('projects');
+    } else if (location.hash === '#achievements') {
+      scrollToSection('achievements');
+    }
+  }, [location]);
 
   // Function to change navbar color on scroll
   const changeBackground = () => {
@@ -58,6 +76,17 @@ const Navbar = () => {
     setSubmenuTimer(timer);
   };
 
+  // Handle navigation to homepage with specific sections
+  const handleNavigateWithSection = (sectionId) => {
+    if (location.pathname !== '/') {
+      // Navigate to home first, and then scroll to section
+      navigate('/');
+      setTimeout(() => scrollToSection(sectionId), 100); // Delay for smooth scroll after navigation
+    } else {
+      scrollToSection(sectionId); // If already on the homepage, just scroll
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ${
@@ -67,11 +96,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-24">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <img
-            className="h-14 w-auto"
-            src={logo}
-            alt="Logo"
-          />
+          <img className="h-14 w-auto" src={logo} alt="Logo" />
         </div>
 
         {/* Desktop Navigation */}
@@ -85,21 +110,41 @@ const Navbar = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <a href="#projects" className="text-gray-100 hover:text-gray-300 transition-colors">
+            <span
+              className="text-gray-100 hover:text-gray-300 transition-colors cursor-pointer"
+              onClick={() => handleNavigateWithSection('projects')}
+            >
               Projects
-            </a>
+            </span>
             {showSubmenu && (
-              <div
-                className="absolute top-full mt-2 w-48 bg-gray-800 rounded-md shadow-lg transition-opacity duration-300 ease-in-out opacity-100"
-              >
-                <Link to={'/haridwarparadise'}  target="_blank" className="block px-4 py-2 text-gray-100 hover:bg-gray-700 transition-all duration-200">Haridwar Paradise</Link>
-                <Link to={'/devprayagparadise'} target='_blank' className="block px-4 py-2 text-gray-100 hover:bg-gray-700 transition-all duration-200">Devprayag Paradise</Link>
+              <div className="absolute top-full mt-2 w-48 bg-gray-800 rounded-md shadow-lg transition-opacity duration-300 ease-in-out opacity-100">
+                <Link
+                  to={'/haridwarparadise'}
+                  target="_blank"
+                  className="block px-4 py-2 text-gray-100 hover:bg-gray-700 transition-all duration-200"
+                >
+                  Haridwar Paradise
+                </Link>
+                <Link
+                  to={'/devprayagparadise'}
+                  target="_blank"
+                  className="block px-4 py-2 text-gray-100 hover:bg-gray-700 transition-all duration-200"
+                >
+                  Devprayag Paradise
+                </Link>
               </div>
             )}
           </div>
 
-          <a href="#achievements" className="text-gray-100 hover:text-gray-300 transition-colors">Achievements</a>
-          <Link to={'/contactus'} className="text-gray-100 hover:text-gray-300 transition-colors">Contact Us</Link>
+          <span
+            className="text-gray-100 hover:text-gray-300 transition-colors cursor-pointer"
+            onClick={() => handleNavigateWithSection('achievements')}
+          >
+            Achievements
+          </span>
+          <Link to={'/contactus'} className="text-gray-100 hover:text-gray-300 transition-colors">
+            Contact Us
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -112,19 +157,53 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation (Drawer-like) */}
+      {/* Mobile Navigation */}
       <div
-        ref={menuRef} // Ref to detect outside clicks
+        ref={menuRef}
         className={`md:hidden fixed top-0 right-0 h-full w-64 bg-gray-900 z-40 transform transition-transform duration-300 ease-in-out ${
           showMenu ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="p-4">
-          <Link to={'/'} className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>Home</Link>
-          <Link to={'/aboutus'} className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>About Us</Link>
-          <a href="#projects" className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>Projects</a>
-          <a href="#achievements" className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>Achievements</a>
-          <Link to={'/contactus'} className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>Contact Us</Link>
+          <Link
+            to={'/'}
+            className="block px-4 py-2 text-gray-100 hover:bg-gray-700"
+            onClick={() => setShowMenu(false)}
+          >
+            Home
+          </Link>
+          <Link
+            to={'/aboutus'}
+            className="block px-4 py-2 text-gray-100 hover:bg-gray-700"
+            onClick={() => setShowMenu(false)}
+          >
+            About Us
+          </Link>
+          <span
+            className="block px-4 py-2 text-gray-100 hover:bg-gray-700 cursor-pointer"
+            onClick={() => {
+              setShowMenu(false);
+              handleNavigateWithSection('projects');
+            }}
+          >
+            Projects
+          </span>
+          <span
+            className="block px-4 py-2 text-gray-100 hover:bg-gray-700 cursor-pointer"
+            onClick={() => {
+              setShowMenu(false);
+              handleNavigateWithSection('achievements');
+            }}
+          >
+            Achievements
+          </span>
+          <Link
+            to={'/contactus'}
+            className="block px-4 py-2 text-gray-100 hover:bg-gray-700"
+            onClick={() => setShowMenu(false)}
+          >
+            Contact Us
+          </Link>
         </div>
       </div>
     </nav>
