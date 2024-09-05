@@ -5,6 +5,7 @@ import Footer from "../../Components/Home/Footer";
 import media1 from '../../assets/media1.png';
 import media2 from '../../assets/media2.png'
 import Navbar from "../../Components/Home/Navbar";
+import image from '../../assets/haridwar2.png'
 
 const AboutUsPage = () => {
 
@@ -21,7 +22,7 @@ const AboutUsPage = () => {
       <div className="relative  h-screen">
         <div className="relative w-[332px] md:w-full  h-2/3">
           <img
-            src={aboutimage} // Replace with your image URL
+            src={image} // Replace with your image URL
             alt="About Us"
             className="w-full h-full object-cover"
           />
