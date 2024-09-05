@@ -8,6 +8,7 @@ import ContactUs from "../../Components/Home/ContactUs";
 import Testimonials from "../../Components/Home/Testimonials";
 import Footer from "../../Components/Home/Footer";
 import Projects from "../../Components/Home/Projects";
+import Navbar from "../../Components/Home/Navbar";
 
 const HomeMain = () => {
 
@@ -21,10 +22,11 @@ const HomeMain = () => {
     <div>
       <div className="flex   ">
         {/* Sidebar (fixed and narrow on the left) */}
-        <Sidebar />
+        {/* <Sidebar /> */}
+        <Navbar/>
 
         {/* Hero Carousel (flex-grow to occupy remaining space) */}
-        <div className="flex-grow ml-20">
+        <div className="flex-grow ">
           <HeroCarousel />
           <Stats/>
           <AboutusSection/>
