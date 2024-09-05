@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Sidebar from "../../Components/Home/Sidebar";
 import Footer from "../../Components/Home/Footer";
+import Navbar from "../../Components/Home/Navbar";
 
 const ContactUsPage = () => {
   useEffect(() => {
@@ -9,7 +10,7 @@ const ContactUsPage = () => {
 
   return (
     <>
-      <Sidebar />
+     <Navbar/>
       <div className="relative  h-screen">
         <div className="relative w-full h-2/4">
           <img

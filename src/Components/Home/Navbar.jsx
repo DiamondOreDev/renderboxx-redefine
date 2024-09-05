@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import haridwarlogo from '../../assets/haridwarlogo.png';
 import logo from "../../assets/redefinelogo.png";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -75,8 +76,8 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
-          <a href="#home" className="text-gray-100 hover:text-gray-300 transition-colors">Home</a>
-          <a href="#about" className="text-gray-100 hover:text-gray-300 transition-colors">About Us</a>
+          <Link to={'/'} className="text-gray-100 hover:text-gray-300 transition-colors">Home</Link>
+          <Link to={'/aboutus'} className="text-gray-100 hover:text-gray-300 transition-colors">About Us</Link>
 
           {/* Projects Dropdown */}
           <div
@@ -91,14 +92,14 @@ const Navbar = () => {
               <div
                 className="absolute top-full mt-2 w-48 bg-gray-800 rounded-md shadow-lg transition-opacity duration-300 ease-in-out opacity-100"
               >
-                <a href="#project1" className="block px-4 py-2 text-gray-100 hover:bg-gray-700 transition-all duration-200">Haridwar Paradise</a>
-                <a href="#project2" className="block px-4 py-2 text-gray-100 hover:bg-gray-700 transition-all duration-200">Devprayag Paradise</a>
+                <Link to={'/haridwarparadise'}  target="_blank" className="block px-4 py-2 text-gray-100 hover:bg-gray-700 transition-all duration-200">Haridwar Paradise</Link>
+                <Link to={'/devprayagparadise'} target='_blank' className="block px-4 py-2 text-gray-100 hover:bg-gray-700 transition-all duration-200">Devprayag Paradise</Link>
               </div>
             )}
           </div>
 
           <a href="#achievements" className="text-gray-100 hover:text-gray-300 transition-colors">Achievements</a>
-          <a href="#contact" className="text-gray-100 hover:text-gray-300 transition-colors">Contact Us</a>
+          <Link to={'/contactus'} className="text-gray-100 hover:text-gray-300 transition-colors">Contact Us</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -119,11 +120,11 @@ const Navbar = () => {
         }`}
       >
         <div className="p-4">
-          <a href="#home" className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>Home</a>
-          <a href="#about" className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>About Us</a>
+          <Link to={'/'} className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>Home</Link>
+          <Link to={'/aboutus'} className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>About Us</Link>
           <a href="#projects" className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>Projects</a>
           <a href="#achievements" className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>Achievements</a>
-          <a href="#contact" className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>Contact Us</a>
+          <Link to={'/contactus'} className="block px-4 py-2 text-gray-100 hover:bg-gray-700" onClick={() => setShowMenu(false)}>Contact Us</Link>
         </div>
       </div>
     </nav>
