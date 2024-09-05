@@ -47,7 +47,7 @@ const Stats = () => {
               <img
                 src="https://acegroupindia.com/images/L-icoin-3.webp"
                 alt="Ongoing projects"
-                className="w-16 h-16 mb-2"
+                className="w-16 h-16 mb-2 "
               />
               <div className="text-center">
                 <p className="font-bold text-xl">17</p>

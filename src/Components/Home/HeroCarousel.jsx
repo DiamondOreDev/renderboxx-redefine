@@ -1,80 +1,70 @@
-// src/components/HeroCarousel.js
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import v1 from '../../assets/vedio2.mp4'
+import { Link } from "react-router-dom";
 
-const images = [
-  {
-    url: "https://acegroupindia.com/img/slider/slide1.webp",
-    heading: "WE BUILD TOGETHER",
-  },
-  {
-    url: "https://acegroupindia.com/img/slider/ace-153-banner-1.webp",
-    heading: "JOIN OUR JOURNEY",
-  },
-  {
-    url: "https://acegroupindia.com/img/slider/ace-terra-banner-home.webp",
-    heading: "EXPERIENCE INNOVATION",
-  },
+const headings = [
+  "WE BUILD TOGETHER",
+  "JOIN OUR JOURNEY",
+  "EXPERIENCE INNOVATION",
 ];
 
 const HeroCarousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentHeading, setCurrentHeading] = useState(0);
 
-  // Function to handle the slide change
-  const handleNextSlide = () => {
-    setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  // Function to handle the heading change
+  const handleNextHeading = () => {
+    setCurrentHeading((prev) => (prev + 1) % headings.length);
   };
 
-  // Automatically change slides every 3 seconds
-  React.useEffect(() => {
+  // Automatically change headings every 3 seconds
+  useEffect(() => {
     const interval = setInterval(() => {
-      handleNextSlide();
+      handleNextHeading();
     }, 3000);
 
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
 
   return (
-    <div className="relative  h-screen  ">
-      <AnimatePresence>
-        {images.map(
-          (image, index) =>
-            index === currentSlide && (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.75 }}
-                className="absolute  w-full h-full"
-              >
-                {/* Image */}
-                <img
-                  src={image.url}
-                  alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+    <div className="relative h-screen overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source
+          src={v1} // Replace with your video URL
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
 
-                {/* Black Overlay */}
-                <div className="absolute inset-0 bg-black opacity-50"></div>
+      {/* Black Overlay */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
 
-                {/* Heading with Animation */}
-                <motion.h1
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.75 }}
-                  className="absolute  headings inset-0 flex flex-col items-center justify-center text-white text-5xl md:text-7xl text-wrap font-bold text-center"
-                >
-                  {image.heading}
-                  <p className="bg-primary rounded-md px-10 py-2 text-gray-700 text-lg mt-4">
-                    Explore More
-                  </p>
-                </motion.h1>
-              </motion.div>
-            )
-        )}
-      </AnimatePresence>
+      {/* Heading with Animated Transition */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-5xl md:text-7xl font-bold text-center px-4">
+        <AnimatePresence>
+          <motion.div
+            key={currentHeading} // Animate presence based on the current heading index
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.75 }}
+            className="absolute"
+          >
+            <h1 className="headings">{headings[currentHeading]}</h1>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Static Subheading */}
+        <Link to={'/aboutus'}className="bg-primary rounded-md px-10 py-2 text-gray-700 text-lg mt-40">
+          Explore More
+        </Link>
+      </div>
     </div>
   );
 };
