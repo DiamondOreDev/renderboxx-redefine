@@ -47,7 +47,7 @@ const Awards = () => {
       </div>
     </div>
 
-    <div className='w-60 h-1 bg-primary mx-auto mb-4'></div>
+   
     </div>
   )
 }
