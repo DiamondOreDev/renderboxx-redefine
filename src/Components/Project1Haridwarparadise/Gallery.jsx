@@ -100,10 +100,11 @@ const Gallery = () => {
         <h1 className="text-center text-5xl mb-4">Our Gallery</h1>
 
         {/* React Gallery Carousel */}
-        <div className="relative mb-8">
+        <div className="relative mb-8 mx-auto">
           <Carousel
             images={images}
-            style={{ height: "500px", width: "100%" }}
+            style={{ height: "500px" }}
+            className="mx-auto md:w-2/3 w-full"
             hasThumbnails={true}
             thumbnailHeight="80px"
             thumbnailWidth="80px"
