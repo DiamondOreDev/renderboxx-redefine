@@ -17,7 +17,7 @@ const AboutUsPage = () => {
     <>
       <Navbar />
       <div className="relative h-screen">
-        <div className="relative w-[332px] md:w-full h-2/3">
+        <div className="relative  w-full h-2/3">
           <img
             src={image} // Replace with your image URL
             alt="About Us"
