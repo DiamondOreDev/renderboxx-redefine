@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import f1 from "../../assets/f1.jpg";
 import f2 from "../../assets/f2.jpg";
 import f3 from "../../assets/f3.jpg";
@@ -43,196 +43,97 @@ const features2 = [
 
 const FeatureSection = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
+  const [circleRadius, setCircleRadius] = useState(220);
+  const [imageSize, setImageSize] = useState(150);
 
-  const handleClick = (feature) => {
-    setSelectedFeature(feature);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      const windowWidth = window.innerWidth;
+      if (windowWidth < 640) {
+        setCircleRadius(120);
+        setImageSize(80);
+      } else if (windowWidth < 1024) {
+        setCircleRadius(170);
+        setImageSize(100);
+      } else {
+        setCircleRadius(220);
+        setImageSize(150);
+      }
+    };
 
-  const handleClose = () => {
-    setSelectedFeature(null);
-  };
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-  const circleRadius = 220; // Adjust radius for more or fewer images
-  const imageSize = 150; // Image size (height and width)
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleFeatureClick = (feature) => setSelectedFeature(feature);
+  const closeFeatureModal = () => setSelectedFeature(null);
+
+  const renderFeatureImages = (features) =>
+    features.map((feature, index) => {
+      const angle = (index / features.length) * 360;
+      const x = circleRadius + circleRadius * Math.cos((angle * Math.PI) / 180) - imageSize / 2;
+      const y = circleRadius + circleRadius * Math.sin((angle * Math.PI) / 180) - imageSize / 2;
+
+      return (
+        <div
+          key={index}
+          className="absolute rounded-full overflow-hidden border-2 md:border-4 border-white cursor-pointer"
+          style={{
+            width: `${imageSize}px`,
+            height: `${imageSize}px`,
+            top: `${y}px`,
+            left: `${x}px`,
+            transform: `rotate(${angle}deg)`,
+            transition: "transform 0.3s ease-in-out",
+          }}
+          onClick={() => handleFeatureClick(feature)}
+        >
+          <img
+            src={feature.image}
+            alt={`Feature ${index + 1}`}
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-in-out"
+          />
+        </div>
+      );
+    });
 
   return (
-    <section className="py-16 px-24 flex  items-center h-screen">
-      <div className="relative flex  justify-center items-center">
-        {/* Center text */}
-        <div className="absolute z-20 text-4xl font-bold headingp1">
-          Township 
-        </div>
-
-        {/* Circular layout for images */}
-        <div className="relative group"
-          style={{ width: `${circleRadius * 2}px`, height: `${circleRadius * 2}px` }}
-        >
-          <div className="absolute inset-0 flex justify-center items-center">
-            {features1.map((feature, index) => {
-              const angle = (index / features1.length) * 360;
-              const x = circleRadius + circleRadius * Math.cos((angle * Math.PI) / 180) - imageSize / 2;
-              const y = circleRadius + circleRadius * Math.sin((angle * Math.PI) / 180) - imageSize / 2;
-
-              return (
-                <div
-                  key={index}
-                  className="absolute rounded-full overflow-hidden border-4 border-white cursor-pointer"
-                  style={{
-                    width: `${imageSize}px`,
-                    height: `${imageSize}px`,
-                    top: `${y}px`,
-                    left: `${x}px`,
-                    transform: `rotate(${angle}deg)`,
-                    transition: "transform 0.3s ease-in-out",
-                  }}
-                  onClick={() => handleClick(feature)}
-                >
-                  <img
-                    src={feature.image}
-                    alt={`Feature ${index + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-in-out"
-                  />
-                </div>
-              );
-            })}
-          </div>
-          <div className="transition-transform duration-500 ease-in-out">
-            {/* Rotating container */}
-            <div
-              className="relative"
-              style={{ width: `${circleRadius * 2}px`, height: `${circleRadius * 2}px` }}
-            >
-              {features1.map((feature, index) => {
-                const angle = (index / features1.length) * 360;
-                const x = circleRadius + circleRadius * Math.cos((angle * Math.PI) / 180) - imageSize / 2;
-                const y = circleRadius + circleRadius * Math.sin((angle * Math.PI) / 180) - imageSize / 2;
-
-                return (
-                  <div
-                    key={index}
-                    className="absolute rounded-full overflow-hidden border-4 border-white cursor-pointer"
-                    style={{
-                      width: `${imageSize}px`,
-                      height: `${imageSize}px`,
-                      top: `${y}px`,
-                      left: `${x}px`,
-                      transform: `rotate(${angle}deg)`,
-                      transition: "transform 0.3s ease-in-out",
-                    }}
-                    onClick={() => handleClick(feature)}
-                  >
-                    <img
-                      src={feature.image}
-                      alt={`Feature ${index + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-in-out"
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <img src={trishul} alt="" className="-rotate-90 w-60" />
+    <section className="py-16 px-4 md:px-24 flex flex-col md:flex-row items-center h-auto md:h-screen">
+      {/* First Circle */}
       <div className="relative flex justify-center items-center">
-        {/* Center text */}
-        <div className="absolute z-20 text-4xl font-bold headingp1">
-          Features
-        </div>
-
-        {/* Circular layout for images */}
-        <div className="relative group"
-          style={{ width: `${circleRadius * 2}px`, height: `${circleRadius * 2}px` }}
-        >
+        <div className="absolute z-20 text-2xl md:text-4xl font-bold headingp1">Township</div>
+        <div className="relative group" style={{ width: `${circleRadius * 2}px`, height: `${circleRadius * 2}px` }}>
           <div className="absolute inset-0 flex justify-center items-center">
-            {features2.map((feature, index) => {
-              const angle = (index / features2.length) * 360;
-              const x = circleRadius + circleRadius * Math.cos((angle * Math.PI) / 180) - imageSize / 2;
-              const y = circleRadius + circleRadius * Math.sin((angle * Math.PI) / 180) - imageSize / 2;
-
-              return (
-                <div
-                  key={index}
-                  className="absolute rounded-full overflow-hidden border-4 border-white cursor-pointer"
-                  style={{
-                    width: `${imageSize}px`,
-                    height: `${imageSize}px`,
-                    top: `${y}px`,
-                    left: `${x}px`,
-                    transform: `rotate(${angle}deg)`,
-                    transition: "transform 0.3s ease-in-out",
-                  }}
-                  onClick={() => handleClick(feature)}
-                >
-                  <img
-                    src={feature.image}
-                    alt={`Feature ${index + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-in-out"
-                  />
-                </div>
-              );
-            })}
-          </div>
-          <div className=" transition-transform duration-500 ease-in-out">
-            {/* Rotating container */}
-            <div
-              className="relative"
-              style={{ width: `${circleRadius * 2}px`, height: `${circleRadius * 2}px` }}
-            >
-              {features2.map((feature, index) => {
-                const angle = (index / features2.length) * 360;
-                const x = circleRadius + circleRadius * Math.cos((angle * Math.PI) / 180) - imageSize / 2;
-                const y = circleRadius + circleRadius * Math.sin((angle * Math.PI) / 180) - imageSize / 2;
-
-                return (
-                  <div
-                    key={index}
-                    className="absolute rounded-full overflow-hidden border-4 border-white cursor-pointer"
-                    style={{
-                      width: `${imageSize}px`,
-                      height: `${imageSize}px`,
-                      top: `${y}px`,
-                      left: `${x}px`,
-                      transform: `rotate(${angle}deg)`,
-                      transition: "transform 0.3s ease-in-out",
-                    }}
-                    onClick={() => handleClick(feature)}
-                  >
-                    <img
-                      src={feature.image}
-                      alt={`Feature ${index + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 ease-in-out"
-                    />
-                  </div>
-                );
-              })}
-            </div>
+            {renderFeatureImages(features1)}
           </div>
         </div>
       </div>
 
-      {/* Expanded View */}
+      <img src={trishul} alt="Trishul Icon" className="-rotate-90 w-60 md:block hidden" />
+
+      {/* Second Circle */}
+      <div className="relative flex justify-center items-center mt-40 md:mt-0">
+        <div className="absolute z-20 text-2xl md:text-4xl font-bold headingp1">Features</div>
+        <div className="relative group" style={{ width: `${circleRadius * 2}px`, height: `${circleRadius * 2}px` }}>
+          <div className="absolute inset-0 flex justify-center items-center">
+            {renderFeatureImages(features2)}
+          </div>
+        </div>
+      </div>
+
+      {/* Expanded View Modal */}
       {selectedFeature && (
-        <div
-          className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-30"
-          onClick={handleClose}
-        >
-          <div
-            className="relative p-8 bg-white rounded-lg"
-            onClick={(e) => e.stopPropagation()} // Prevent click from closing
-          >
-            <button
-              className="absolute top-2 right-2 text-3xl font-bold text-gray-800"
-              onClick={handleClose}
-            >
+        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-30" onClick={closeFeatureModal}>
+          <div className="relative p-8 bg-white rounded-lg" onClick={(e) => e.stopPropagation()}>
+            <button className="absolute top-2 right-2 text-3xl font-bold text-gray-800" onClick={closeFeatureModal}>
               &times;
             </button>
             <img
               src={selectedFeature.image}
               alt="Selected Feature"
-              className="w-96 h-96 object-cover rounded-full"
+              className="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full"
             />
             <p className="text-center text-lg font-semibold mt-4">{selectedFeature.description}</p>
           </div>
