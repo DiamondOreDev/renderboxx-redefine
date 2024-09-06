@@ -58,6 +58,35 @@ const carouselImages = [
   { src: sd1 },
   { src: sd2 },
   { src: sd3 },
+  { src: sd4 },
+  { src: sd5 },
+  { src: sd6 },
+  { src: sd7 },
+  { src: sd8 },
+  { src: sd9 },
+  { src: sd10 },
+  { src: sd11 },
+  { src: sd12 },
+  { src: sd13 },
+  { src: sd14 },
+  { src: sd15 },
+  { src: sd16 },
+  { src: sd17 },
+  { src: sd18 },
+  { src: sd19 },
+  { src: gd1},
+  { src: gd2},
+  { src: gd3},
+  { src: gd4},
+  { src: gd5},
+  { src: gd6},
+  { src: gd7},
+  { src: gd8},
+  { src: gd9},
+
+ 
+
+
 ];
 
 const Gallery = () => {

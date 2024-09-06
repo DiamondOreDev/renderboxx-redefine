@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import aarti from '../../assets/aarti.jpg'
 
 const ContactUs = () => {
   return (
@@ -7,7 +8,7 @@ const ContactUs = () => {
       <div className="relative h-[300px] mb-10">
         <div className="relative w-full h-full">
           <img
-            src="https://lamoureuxarchitect.ca/wp-content/uploads/2022/04/joel-filipe-pyHPJEjUYHY-unsplash-scaled.jpg"
+            src={aarti}
             alt="About Us"
             className="w-full h-full object-cover"
           />

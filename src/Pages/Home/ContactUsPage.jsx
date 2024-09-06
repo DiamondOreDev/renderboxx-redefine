@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Sidebar from "../../Components/Home/Sidebar";
 import Footer from "../../Components/Home/Footer";
 import Navbar from "../../Components/Home/Navbar";
+import aarti from '../../assets/aarti.jpg'
 
 const ContactUsPage = () => {
   useEffect(() => {
@@ -47,7 +48,7 @@ const ContactUsPage = () => {
           <div className="relative md:h-[400px] h-[800px] mb-10">
             <div className="relative w-full h-full">
               <img
-                src="https://lamoureuxarchitect.ca/wp-content/uploads/2022/04/joel-filipe-pyHPJEjUYHY-unsplash-scaled.jpg"
+                src={aarti}
                 alt="About Us"
                 className="w-full h-full  object-cover"
               />
