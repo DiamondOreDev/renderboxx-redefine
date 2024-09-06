@@ -1,5 +1,8 @@
-import React, { useRef } from "react";
-import Slider from "react-slick";
+import React from "react";
+import Carousel from "react-gallery-carousel";
+import "react-gallery-carousel/dist/index.css";
+
+// Import only the images you are using
 import g1 from "../../assets/g1.jpg";
 import g2 from "../../assets/g2.jpg";
 import g3 from "../../assets/g3.jpg";
@@ -43,141 +46,72 @@ import gd9 from "../../assets/gd9.jpg";
 
 // Main Image Carousel Data
 const carouselImages = [
-  { src: g1, alt: "Image 1", title: "GATE" },
-  { src: g2, alt: "Image 2", title: "Club House" },
-  { src: g3, alt: "Image 3", title: "Swimming Pool" },
-  { src: g4, alt: "Image 4", title: "Kids Play Ground" },
-  { src: g5, alt: "Image 5", title: "Central Park Anandvan" },
-  { src: g6, alt: "Image 6", title: "Design your own house" },
-  { src: g7, alt: "Image 7", title: "Wide Roads" },
-  { src: g8, alt: "Image 8", title: "Plot of 100 Sqr Yards" },
-  { src: g9, alt: "Image 9", title: "Farm House" },
-  { src: g10, alt: "Image 10", title: "Clearly Denmarked Plots" },
-  { src: g11 },
-  { src: g12 },
-  { src: sd1 },
-  { src: sd2 },
-  { src: sd3 },
-  { src: sd4 },
-  { src: sd5 },
-  { src: sd6 },
-  { src: sd7 },
-  { src: sd8 },
-  { src: sd9 },
-  { src: sd10 },
-  { src: sd11 },
-  { src: sd12 },
-  { src: sd13 },
-  { src: sd14 },
-  { src: sd15 },
-  { src: sd16 },
-  { src: sd17 },
-  { src: sd18 },
-  { src: sd19 },
-  { src: gd1},
-  { src: gd2},
-  { src: gd3},
-  { src: gd4},
-  { src: gd5},
-  { src: gd6},
-  { src: gd7},
-  { src: gd8},
-  { src: gd9},
-
- 
-
-
+  { src: g1, alt: "GATE" },
+  { src: g2, alt: "Club House" },
+  { src: g3, alt: "Swimming Pool" },
+  { src: g4, alt: "Kids Play Ground" },
+  { src: g5, alt: "Central Park Anandvan" },
+  { src: g6, alt: "Design your own house" },
+  { src: g7, alt: "Wide Roads" },
+  { src: g8, alt: "Plot of 100 Sqr Yards" },
+  { src: g9, alt: "Farm House" },
+  { src: g10, alt: "Clearly Denmarked Plots" },
+  { src: g11, alt: "Image 11" },
+  { src: g12, alt: "Image 12" },
+  { src: sd1, alt: "Image 13" },
+  { src: sd2, alt: "Image 14" },
+  { src: sd3, alt: "Image 15" },
+  { src: sd4, alt: "Image 16" },
+  { src: sd5, alt: "Image 17" },
+  { src: sd6, alt: "Image 18" },
+  { src: sd7, alt: "Image 19" },
+  { src: sd8, alt: "Image 20" },
+  { src: sd9, alt: "Image 21" },
+  { src: sd10, alt: "Image 22" },
+  { src: sd11, alt: "Image 23" },
+  { src: sd12, alt: "Image 24" },
+  { src: sd13, alt: "Image 25" },
+  { src: sd14, alt: "Image 26" },
+  { src: sd15, alt: "Image 27" },
+  { src: sd16, alt: "Image 28" },
+  { src: sd17, alt: "Image 29" },
+  { src: sd18, alt: "Image 30" },
+  { src: sd19, alt: "Image 31" },
+  { src: gd1, alt: "Image 32" },
+  { src: gd2, alt: "Image 33" },
+  { src: gd3, alt: "Image 34" },
+  { src: gd4, alt: "Image 35" },
+  { src: gd5, alt: "Image 36" },
+  { src: gd6, alt: "Image 37" },
+  { src: gd7, alt: "Image 38" },
+  { src: gd8, alt: "Image 39" },
+  { src: gd9, alt: "Image 40" }
 ];
 
 const Gallery = () => {
-  // Refs for the sliders
-  const mainSliderRef = useRef(null);
-  const thumbnailSliderRef = useRef(null);
-
-  // Slick Carousel settings
-  const mainSliderSettings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000, // Adjust speed as needed
-    fade: true,
-    arrows: false, // Hide arrows for the main slider
-    beforeChange: (current, next) => {
-      // Sync the thumbnail slider when the main slider changes
-      if (thumbnailSliderRef.current) {
-        thumbnailSliderRef.current.slickGoTo(next);
-      }
-    },
-  };
-
-  const thumbnailSliderSettings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    centerMode: true,
-    focusOnSelect: true,
-    centerPadding: "0",
-    arrows: false, // Hide arrows for the thumbnail slider
-    beforeChange: (current, next) => {
-      // Sync the main slider when the thumbnail slider changes
-      if (mainSliderRef.current) {
-        mainSliderRef.current.slickGoTo(next);
-      }
-    },
-  };
+  const images = carouselImages.map((image) => ({
+    src: image.src,
+    alt: image.alt || "Gallery Image",
+  }));
 
   return (
     <div className="py-16">
       <div className="container mx-auto px-6">
-        <h1 className="text-center headingp1 text-5xl mb-4">Our Gallery</h1>
+        <h1 className="text-center text-5xl mb-4">Our Gallery</h1>
 
-        {/* Top Main Carousel */}
+        {/* React Gallery Carousel */}
         <div className="relative mb-8">
-          <Slider {...mainSliderSettings} ref={mainSliderRef}>
-            {carouselImages.map((image, index) => (
-              <div key={index} className="relative">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-1/2 h-[500px] object-cover mx-auto rounded-lg"
-                />
-                {/* <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-60 text-white text-center py-2">
-                  <p className="text-lg font-semibold">{image.title}</p>
-                </div> */}
-              </div>
-            ))}
-          </Slider>
+          <Carousel
+            images={images}
+            style={{ height: "500px", width: "100%" }}
+            hasThumbnails={true}
+            thumbnailHeight="80px"
+            thumbnailWidth="80px"
+            hasIndexBoard={false}
+            isAutoPlaying={true}
+            autoPlayInterval={3000}
+          />
         </div>
-
-        {/* Bottom Thumbnail Carousel */}
-        <div className="relative">
-  <Slider {...thumbnailSliderSettings} ref={thumbnailSliderRef}>
-    {carouselImages.map((image, index) => (
-      <div
-        key={index}
-        className={`w-24 h-24 mx-4 cursor-pointer  overflow-hidden ${
-          thumbnailSliderRef.current && thumbnailSliderRef.current.innerSlider
-            ? thumbnailSliderRef.current.innerSlider.state.currentSlide === index
-              ? 'border-blue-500 border-4'
-              : 'border-transparent'
-            : 'border-transparent'
-        }`}
-      >
-        <img
-          src={image.src}
-          alt={image.alt}
-          className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
-        />
-      </div>
-    ))}
-  </Slider>
-</div>
-
       </div>
     </div>
   );
