@@ -199,9 +199,8 @@ const Navbar = () => {
           showMenu ? "translate-x-0" : "translate-x-full"
         }`}
       >
-
-        <img src={logo} alt=""  className="px-6 mt-10"/>
-        <div className="p-4 mt-4 " >
+        <img src={logo} alt="" className="px-6 mt-10" />
+        <div className="p-4 mt-4 ">
           <Link
             to={"/"}
             className="block px-4 py-2 text-gray-100 hover:bg-gray-700 border border-l-4 border-yellow-500 border-r-0 border-b-0 border-t-0"
@@ -245,11 +244,12 @@ const Navbar = () => {
 
         {/* Social Icons */}
         <div className="flex justify-center space-x-4 mt-4">
-          <FaFacebookF className="text-gray-100 hover:text-primary" />
-          <FaTwitter className="text-gray-100 hover:text-primary" />
-          <FaInstagram className="text-gray-100 hover:text-primary" />
-          <FaPinterestP className="text-gray-100 hover:text-primary" />
-          <FaYoutube className="text-gray-100 hover:text-primary" />
+          <a href="https://www.facebook.com/Redefinegroups" target="_blank">
+            <FaFacebookF className="text-gray-100 text-3xl hover:text-primary" />
+          </a>
+          <a href="https://www.youtube.com/@redefinegroup178" target="_blank">
+            <FaYoutube className="text-gray-100 hover:text-primary text-3xl" />
+          </a>
         </div>
       </div>
     </nav>
