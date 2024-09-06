@@ -6,6 +6,7 @@ import media1 from '../../assets/media1.png';
 import media2 from '../../assets/media2.png'
 import Navbar from "../../Components/Home/Navbar";
 import image from '../../assets/haridwar2.png'
+import trishul from '../../assets/trishul.png'
 
 const AboutUsPage = () => {
 
@@ -26,10 +27,11 @@ const AboutUsPage = () => {
           {/* Overlay */}
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center mx-auto mt-20 z-10">
+            
+            <h1 className="text-white text-5xl md:text-8xl font-bold headings ">ABOUT US</h1>
             <p className="text-gray-100 font-semibold text-sm md:text-2xl text-wrap">
               DESIGNED FOR LIFE, DRIVEN BY INNOVATION
             </p>
-            <h1 className="text-white text-5xl md:text-8xl font-bold headings ">ABOUT US</h1>
           </div>
         </div>
 
@@ -38,7 +40,9 @@ const AboutUsPage = () => {
           <div>
             <p className="text-lg p-4 md:p-8">
               <h1 className="headings text-6xl">COMPANY PROFILE</h1>
-              <div className="w-40 h-1 bg-primary mb-6"></div>
+              <div className=" mb-6">
+              <img src={trishul} alt="" className="w-80 md:px-0"/>
+              </div>
               <p className="text-xl text-justify">
                 Over 17 years, Redefine Group has single-mindedly focused on
                 innovative ideas. Taking ordinary spaces and transforming them
@@ -59,7 +63,9 @@ const AboutUsPage = () => {
           {/* Media Coverage */}
           <div className="mt-20 p-8">
             <h1 className="headings text-6xl">MEDIA COVERAGE</h1>
-            <div className="w-full md:w-40 h-1 bg-primary mb-10"></div>
+            <div className="mb-6">
+            <img src={trishul} alt="" className="w-80 md:px-0"/>
+            </div>
             <div className="flex md:flex justify-between md:px-20 md:block hidden">
               <img src={media1} alt="" />
               <img src={media2} alt="" />
@@ -74,7 +80,9 @@ const AboutUsPage = () => {
           {/* WORDS FROM CHAIRMAN */}
           <div className="mt-10 p-4 md:p-8">
             <h1 className="headings text-5xl md:text-6xl uppercase">Sovereignty</h1>
-            <div className="w-40 h-1 bg-primary mb-10"></div>
+            <div className=" mb-10">
+            <img src={trishul} alt="" className="w-80 md:px-0"/>
+            </div>
             <div className="grid md:grid-cols-6 gap-4">
               <div className="col-span-4 text-justify text-lg text-gray-700">
                 <p>Founded by Mr. Chander Mohan, the Redefine Group has a leading presence across real estate, financial services, e-commerce, software, and healthcare.</p>

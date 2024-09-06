@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Footer from "../../Components/Home/Footer";
 import Navbar from "../../Components/Home/Navbar";
 import aarti from '../../assets/aarti.jpg'; // Use this as a background image
+import trishul from '../../assets/trishul.png'
 
 const ContactUsPage = () => {
   useEffect(() => {
@@ -19,6 +20,7 @@ const ContactUsPage = () => {
             <h1 className="text-white text-5xl md:text-8xl font-bold headings">
               Contact Us
             </h1>
+            <img src={trishul} alt="" className="h-20 md:px-0 ml-0 md:ml-80 "/>
           </div>
         </div>
 

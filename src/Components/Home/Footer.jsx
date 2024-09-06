@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import footervedio from '../../assets/footervedio.mp4';
+import logo from '../../assets/redefinelogo.png'
 
 const Footer = () => {
   return (
@@ -20,7 +21,7 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <div className="flex flex-col max-w-lg">
               <h1 className="text-4xl text-gray-100 headings">
-                REDEFINE GROUP
+                <img src={logo} alt="" className="w-40"/>
               </h1>
               <p className="text-gray-100 mt-6 text-justify">
                 Redefine Group, founded by Chander Mohan in 2006, transforms
@@ -42,7 +43,7 @@ const Footer = () => {
                     className="hover:underline flex items-start text-gray-200 text-sm"
                   >
                     <svg
-                      className="h-6 w-6 text-gray-600 mr-1"
+                      className="h-6 w-6 text-gray-100 mr-1"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -66,7 +67,7 @@ const Footer = () => {
                 <li>
                   <a href="#" className="hover:underline flex text-gray-100">
                     <svg
-                      className="h-6 w-6 text-gray-600 mr-1"
+                      className="h-6 w-6 text-gray-100 mr-1"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"

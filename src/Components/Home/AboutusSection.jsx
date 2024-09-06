@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../Home/Footer'
 import aboutusimage from '../../assets/aboutusimage.png'
+import trishul  from '../../assets/trishul.png'
 
 const AboutusSection = () => {
   return (
@@ -27,7 +28,9 @@ const AboutusSection = () => {
         </div>
       </div> 
 
-      <div className="w-60 h-1 bg-primary mx-auto"></div>
+      <div className=" mx-auto">
+      <img src={trishul} alt="" className="mx-auto md:px-0 px-10"/>
+      </div>
 
      
     </>
