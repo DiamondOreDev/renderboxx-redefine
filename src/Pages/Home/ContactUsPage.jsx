@@ -30,7 +30,7 @@ const ContactUsPage = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 flex flex-col items-start justify-start mt-12">
-                <div className="grid md:grid-cols-6 md:gap-20 ml-24 p-4 md:p-0 md:ml-32">
+                <div className="grid md:grid-cols-6 md:gap-20 mx-auto p-4 md:p-0 md:ml-32">
                   <div className="flex flex-col space-y-10 col-span-2">
                     <h1 className="uppercase text-5xl text-gray-100">
                       Contact Us
