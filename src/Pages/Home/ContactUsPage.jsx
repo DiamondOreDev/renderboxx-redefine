@@ -20,12 +20,12 @@ const ContactUsPage = () => {
             <h1 className="text-white text-5xl md:text-8xl font-bold headings">
               Contact Us
             </h1>
-            <img src={trishul} alt="" className="h-20 md:px-0 ml-0 md:ml-80 "/>
+            <img src={trishul} alt="" className="h-20 md:px-0 md:-ml-40  "/>
           </div>
         </div>
 
         <main className="flex-grow mt-4"> {/* Ensures the map and form take the remaining space */}
-          <div className="relative md:h-[450px] h-[800px] mb-10">
+          <div className="relative md:h-[450px] h-[700px] md:h-[800px] mb-10">
             <div className="relative w-full h-full">
               <div className="absolute inset-0 flex flex-col items-start justify-start mt-12">
                 <div className="grid md:grid-cols-6 md:gap-20 mx-auto p-4 md:p-0 md:ml-32">

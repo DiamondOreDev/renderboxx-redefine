@@ -1,26 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
-import haridwarlogo from "../../assets/haridwarlogo.png";
-import logo from "../../assets/redefinelogo.png";
+import logo from "../../assets/redefinelogo.png"; // Update this with the logo as per your design
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaPinterestP,
+  FaYoutube,
+} from "react-icons/fa"; // Social media icons
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showSubmenu, setShowSubmenu] = useState(false);
   const [submenuTimer, setSubmenuTimer] = useState(null);
-  const menuRef = useRef(null); // Ref to track clicks outside the menu
+  const menuRef = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Scroll to section
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  // Check the current URL and scroll to the section on load
   useEffect(() => {
     if (location.hash === "#projects") {
       scrollToSection("projects");
@@ -29,7 +26,6 @@ const Navbar = () => {
     }
   }, [location]);
 
-  // Function to change navbar color on scroll
   const changeBackground = () => {
     if (window.scrollY >= 80) {
       setNavbar(true);
@@ -45,7 +41,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close the menu if clicked outside
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setShowMenu(false);
@@ -63,7 +58,6 @@ const Navbar = () => {
     };
   }, [showMenu]);
 
-  // Hover functions to delay submenu disappearance
   const handleMouseEnter = () => {
     if (submenuTimer) clearTimeout(submenuTimer);
     setShowSubmenu(true);
@@ -72,18 +66,16 @@ const Navbar = () => {
   const handleMouseLeave = () => {
     const timer = setTimeout(() => {
       setShowSubmenu(false);
-    }, 300); // Submenu will stay for half a second after hover out
+    }, 300);
     setSubmenuTimer(timer);
   };
 
-  // Handle navigation to homepage with specific sections
   const handleNavigateWithSection = (sectionId) => {
     if (location.pathname !== "/") {
-      // Navigate to home first, and then scroll to section
       navigate("/");
-      setTimeout(() => scrollToSection(sectionId), 100); // Delay for smooth scroll after navigation
+      setTimeout(() => scrollToSection(sectionId), 100);
     } else {
-      scrollToSection(sectionId); // If already on the homepage, just scroll
+      scrollToSection(sectionId);
     }
   };
 
@@ -96,7 +88,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-24">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <img className="h-14 w-auto" src={logo} alt="Logo" />
+          <img className="h-20 w-auto" src={logo} alt="Logo" />
         </div>
 
         {/* Desktop Navigation */}
@@ -114,7 +106,6 @@ const Navbar = () => {
             About Us
           </Link>
 
-          {/* Projects Dropdown */}
           <div
             className="relative"
             onMouseEnter={handleMouseEnter}
@@ -142,7 +133,6 @@ const Navbar = () => {
                 >
                   Devprayag Paradise
                 </Link>
-                {/* Add more dropdown links here */}
               </div>
             )}
           </div>
@@ -167,20 +157,37 @@ const Navbar = () => {
             onClick={() => setShowMenu(!showMenu)}
             className="text-gray-100 focus:outline-none"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
+            {showMenu ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            )}
           </button>
         </div>
       </div>
@@ -188,14 +195,16 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div
         ref={menuRef}
-        className={`md:hidden fixed top-0 right-0 h-full w-64 bg-gray-900 z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-0 right-0 h-full w-64  bg-black z-40 transform transition-transform duration-300 ease-in-out ${
           showMenu ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-4">
+
+        <img src={logo} alt=""  className="px-6 mt-10"/>
+        <div className="p-4 mt-4 " >
           <Link
             to={"/"}
-            className="block px-4 py-2 text-gray-100 hover:bg-gray-700"
+            className="block px-4 py-2 text-gray-100 hover:bg-gray-700 border border-l-4 border-yellow-500 border-r-0 border-b-0 border-t-0"
             onClick={() => setShowMenu(false)}
           >
             Home
@@ -232,6 +241,15 @@ const Navbar = () => {
           >
             Contact Us
           </Link>
+        </div>
+
+        {/* Social Icons */}
+        <div className="flex justify-center space-x-4 mt-4">
+          <FaFacebookF className="text-gray-100 hover:text-primary" />
+          <FaTwitter className="text-gray-100 hover:text-primary" />
+          <FaInstagram className="text-gray-100 hover:text-primary" />
+          <FaPinterestP className="text-gray-100 hover:text-primary" />
+          <FaYoutube className="text-gray-100 hover:text-primary" />
         </div>
       </div>
     </nav>

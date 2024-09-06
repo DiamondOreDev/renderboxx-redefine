@@ -121,7 +121,7 @@ const Stats = () => {
         </div>
 
         <div className=" mx-auto">
-          <img src={trishul} alt="" className="mx-auto md:px-0 px-10"/>
+          {/* <img src={trishul} alt="" className="mx-auto md:px-0 px-10"/> */}
         </div>
       </div>
     </>

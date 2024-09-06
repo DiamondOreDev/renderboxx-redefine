@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import haridwar from '../../assets/haridwar2.png'
-import devprayaglogo from '../../assets/devprayaglogo.png'
-import haridwarlogo from '../../assets/haridwarlogo.png'
-
-
+import haridwar from "../../assets/haridwar2.png";
+import devprayaglogo from "../../assets/devprayaglogo.png";
+import haridwarlogo from "../../assets/haridwarlogo.png";
+import trishul from "../../assets/trishul.png";
 
 // Sample project data
 const projects = [
@@ -20,17 +19,22 @@ const projects = [
   },
   {
     title: "Luxury Villa",
-    image: "https://tff-wr.imgix.net//img/project-thumbnails/rawn-kingopenschool-03-thumbnail.jpg?w=2100&q=70&auto=format,compress",
+    image:
+      "https://tff-wr.imgix.net//img/project-thumbnails/rawn-kingopenschool-03-thumbnail.jpg?w=2100&q=70&auto=format,compress",
     link: "#",
   },
 ];
 
 const Projects = () => {
   return (
-    <div className="mx-auto py-12 px-4 sm:px-6 lg:px-8 mb-4 " id="projects">
-      <h2 className="text-5xl font-bold text-center mb-12 headings">Our Projects</h2>
+   
+       <div className="md:py-20 py-10  flex flex-col justify-between mx-auto items-center"  id="projects">
+          <div>
+          <h1 className="text-5xl md:text-7xl font-semibold text-center headings">Our Projects</h1>
+          <img src={trishul} alt="" className="w-60 md:px-0 px-10"/>
+          </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-10 gap-8 mx-10">
         {projects.map((project, index) => (
           <div key={index} className="relative overflow-hidden group ">
             {/* Image Container with Overlay */}
@@ -58,7 +62,7 @@ const Projects = () => {
                 <div className="flex items-center">
                   {/* Animated Line */}
                   <div className="w-1 rounded-md h-0 bg-primary group-hover:mr-4 transition-all duration-500 group-hover:h-10"></div>
-                 <p className="headings text-2xl">{project.title}</p> 
+                  <p className="headings text-2xl">{project.title}</p>
                 </div>
               </h3>
             </div>
