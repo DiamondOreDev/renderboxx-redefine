@@ -55,12 +55,9 @@ const FeatureSection = () => {
   const circleRadius = 220; // Adjust radius for more or fewer images
   const imageSize = 150; // Image size (height and width)
 
-
-  
-
   return (
-    <section className="py-16 px-24 flex flex-col md:flex items-center h-auto md:h-screen">
-      <div className="relative flex justify-center items-center">
+    <section className="py-16 px-24 flex  items-center h-screen">
+      <div className="relative flex  justify-center items-center">
         {/* Center text */}
         <div className="absolute z-20 text-4xl font-bold headingp1">
           Township 
