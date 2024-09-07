@@ -10,9 +10,9 @@ import trishul from '../../assets/trishul.png'
 
 const AboutUsPage = () => {
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -28,8 +28,8 @@ const AboutUsPage = () => {
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center mx-auto mt-20 z-10">
             
-            <h1 className="text-white text-5xl md:text-8xl font-bold headings ">ABOUT US</h1>
-            <p className="text-gray-100 font-semibold text-sm md:text-2xl text-wrap">
+            <h1 className="text-white text-5xl md:text-8xl font-bold headings ">About us</h1>
+            <p className="text-gray-100 font-semibold text-sm md:text-2xl text-wrap mt-2">
               DESIGNED FOR LIFE, DRIVEN BY INNOVATION
             </p>
           </div>
@@ -79,7 +79,7 @@ const AboutUsPage = () => {
 
           {/* WORDS FROM CHAIRMAN */}
           <div className="mt-10 p-4 md:p-8">
-            <h1 className="headings text-5xl md:text-6xl capitalize">Sovereignty</h1>
+            <h1 className="headings text-5xl md:text-7xl capitalize">Sovereignty</h1>
             <div className=" mb-10">
             <img src={trishul} alt="" className="w-80 md:px-0"/>
             </div>
