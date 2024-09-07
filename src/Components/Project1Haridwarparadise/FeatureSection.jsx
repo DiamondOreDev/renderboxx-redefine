@@ -87,7 +87,7 @@ const FeatureSection = () => {
             height: `${imageSize}px`,
             top: `${y}px`,
             left: `${x}px`,
-            transform: `rotate(${angle}deg)`,
+            transform: 'rotate(0deg)' ,
             transition: "transform 0.3s ease-in-out",
           }}
           onClick={() => handleFeatureClick(feature)}
