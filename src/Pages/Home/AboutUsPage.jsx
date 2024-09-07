@@ -39,7 +39,7 @@ const AboutUsPage = () => {
           {/* Company profile */}
           <div>
             <p className="text-lg p-4 md:p-8">
-              <h1 className="headings text-6xl">COMPANY PROFILE</h1>
+              <h1 className="headings text-4xl md:text-6xl">Company Profile</h1>
               <div className=" mb-6">
               <img src={trishul} alt="" className="w-80 md:px-0"/>
               </div>
@@ -62,7 +62,7 @@ const AboutUsPage = () => {
 
           {/* Media Coverage */}
           <div className="mt-20 p-8">
-            <h1 className="headings text-6xl capitalize">Media Coverage</h1>
+            <h1 className="headings text-4xl md:text-6xl capitalize">Media Coverage</h1>
             <div className="mb-6">
             <img src={trishul} alt="" className="w-80 md:px-0"/>
             </div>
