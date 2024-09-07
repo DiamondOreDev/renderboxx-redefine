@@ -27,7 +27,8 @@ const features1 = [
   { image: f5, description: "Clearly demarked plots" },
   { image: f6, description: "Farm Houses" },
   { image: f7, description: "Swimming Pool" },
-  { image: f8, description: "Club House" },
+  { image: f17, description: "Neaboure" },
+ 
 ];
 
 const features2 = [
@@ -39,6 +40,7 @@ const features2 = [
   { image: f14, description: "Central Park with Kids Play Area" },
   { image: f15, description: "Lots of open spaces and greenery" },
   { image: f16, description: "Temple" },
+ 
 ];
 
 const FeatureSection = () => {
@@ -100,46 +102,53 @@ const FeatureSection = () => {
     });
 
   return (
-    <section className="py-16 px-4 md:px-24 flex flex-col md:flex-row items-center h-auto md:h-screen">
-      {/* First Circle */}
-      <div className="relative flex justify-center items-center">
-        <div className="absolute z-20 text-2xl md:text-4xl font-bold headingp1">Township</div>
-        <div className="relative group" style={{ width: `${circleRadius * 2}px`, height: `${circleRadius * 2}px` }}>
-          <div className="absolute inset-0 flex justify-center items-center">
-            {renderFeatureImages(features1)}
-          </div>
+    <section className="py-16 px-4 md:px-24 flex flex-col md:flex-row items-center h-auto md:h-screen max-w-screen-xl mx-auto">
+    {/* First Circle */}
+    <div className="relative flex justify-center items-center">
+      <div className="absolute z-20 text-2xl md:text-4xl font-bold headingp1">Township</div>
+      <div
+        className="relative group"
+        style={{ width: `${circleRadius * 2}px`, height: `${circleRadius * 2}px` }}
+      >
+        <div className="absolute inset-0 flex justify-center items-center">
+          {renderFeatureImages(features1)}
         </div>
       </div>
-
-      <img src={trishul} alt="Trishul Icon" className="-rotate-90 w-60 md:block hidden" />
-
-      {/* Second Circle */}
-      <div className="relative flex justify-center items-center mt-40 md:mt-0">
-        <div className="absolute z-20 text-2xl md:text-4xl font-bold headingp1">Features</div>
-        <div className="relative group" style={{ width: `${circleRadius * 2}px`, height: `${circleRadius * 2}px` }}>
-          <div className="absolute inset-0 flex justify-center items-center">
-            {renderFeatureImages(features2)}
-          </div>
+    </div>
+  
+    <img src={trishul} alt="Trishul Icon" className="-rotate-90 w-60 md:block hidden" />
+  
+    {/* Second Circle */}
+    <div className="relative flex justify-center items-center mt-40 md:mt-0">
+      <div className="absolute z-20 text-2xl md:text-4xl font-bold headingp1">Features</div>
+      <div
+        className="relative group"
+        style={{ width: `${circleRadius * 2}px`, height: `${circleRadius * 2}px` }}
+      >
+        <div className="absolute inset-0 flex justify-center items-center">
+          {renderFeatureImages(features2)}
         </div>
       </div>
-
-      {/* Expanded View Modal */}
-      {selectedFeature && (
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-30" onClick={closeFeatureModal}>
-          <div className="relative p-8 bg-white rounded-lg" onClick={(e) => e.stopPropagation()}>
-            <button className="absolute top-2 right-2 text-3xl font-bold text-gray-800" onClick={closeFeatureModal}>
-              &times;
-            </button>
-            <img
-              src={selectedFeature.image}
-              alt="Selected Feature"
-              className="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full"
-            />
-            <p className="text-center text-lg font-semibold mt-4">{selectedFeature.description}</p>
-          </div>
+    </div>
+  
+    {/* Expanded View Modal */}
+    {selectedFeature && (
+      <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-70 z-30" onClick={closeFeatureModal}>
+        <div className="relative p-8 bg-white rounded-lg" onClick={(e) => e.stopPropagation()}>
+          <button className="absolute top-2 right-2 text-3xl font-bold text-gray-800" onClick={closeFeatureModal}>
+            &times;
+          </button>
+          <img
+            src={selectedFeature.image}
+            alt="Selected Feature"
+            className="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full"
+          />
+          <p className="text-center text-lg font-semibold mt-4">{selectedFeature.description}</p>
         </div>
-      )}
-    </section>
+      </div>
+    )}
+  </section>
+  
   );
 };
 

@@ -67,8 +67,8 @@ const AboutUsPage = () => {
             <img src={trishul} alt="" className="w-80 md:px-0"/>
             </div>
             <div className="flex md:flex justify-between md:px-20 md:block hidden">
-              <img src={media1} alt="" />
-              <img src={media2} alt="" />
+              <img src={media1} alt=""  className="w-full"/>
+              <img src={media2} alt="" className="w-full" />
             </div>
             <img
               src="https://redefinegroup.com/images/Media-Coverage.jpg"
@@ -89,9 +89,9 @@ const AboutUsPage = () => {
                 <p>The Redefine Group strongly believes that it has a pivotal role to play in shaping the lives of ordinary people to transform them into someone extraordinary. Through its various consumer-facing businesses, the Group provides a robust platform to every Indian to realize their potential and lead a lifestyle that everyone desires.</p>
                 <p>Mr. Chander Mohan, born on 27 May 1984, in Etawah, UP. He is the younger son of the visionary Shri Hotilal and lives with his family in Delhi. Graduated (B.Tech. in Electronics and Communications) BTEC – HIGHER NATIONAL DIPLOMA (HND) In Electrical/Electronic Engineering, U.K. Edxcel</p>
               </div>
-              <div className="flex flex-col col-span-2">
-                <div className=" relative w-40 h-60 opacity-75 ml-40 bg-primary"></div>
-                <img src="https://i.pinimg.com/736x/e6/cc/1e/e6cc1ebd76c6855de129e7d7c862f6af.jpg" alt="" className="absolute w-40  ml-28 mt-10 z-10 " />
+              <div className="flex flex-col col-span-2 items-center">
+            
+                <img src="https://i.pinimg.com/736x/e6/cc/1e/e6cc1ebd76c6855de129e7d7c862f6af.jpg" alt="" className="w-60  " />
                 <p className="font-bold text-2xl mt-12 ml-20 headings">Mr. Chander Mohan</p>
               </div>
             </div>
