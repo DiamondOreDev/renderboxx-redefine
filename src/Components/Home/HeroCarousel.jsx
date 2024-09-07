@@ -4,9 +4,10 @@ import v1 from '../../assets/vedio3.mp4'
 import { Link } from "react-router-dom";
 
 const headings = [
-  "WE BUILD TOGETHER",
-  "JOIN OUR JOURNEY",
-  "EXPERIENCE INNOVATION",
+  "We Bulid Together",
+  "Join Our Journey",
+   "Experience Innovation"
+  
 ];
 
 const HeroCarousel = () => {
@@ -56,7 +57,7 @@ const HeroCarousel = () => {
             transition={{ duration: 0.75 }}
             className="absolute"
           >
-            <h1 className="headings">{headings[currentHeading]}</h1>
+            <h1 className="headings capitlized">{headings[currentHeading]}</h1>
           </motion.div>
         </AnimatePresence>
 

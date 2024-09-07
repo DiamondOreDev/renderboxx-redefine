@@ -62,7 +62,7 @@ const AboutUsPage = () => {
 
           {/* Media Coverage */}
           <div className="mt-20 p-8">
-            <h1 className="headings text-6xl">MEDIA COVERAGE</h1>
+            <h1 className="headings text-6xl capitalize">Media Coverage</h1>
             <div className="mb-6">
             <img src={trishul} alt="" className="w-80 md:px-0"/>
             </div>
@@ -79,7 +79,7 @@ const AboutUsPage = () => {
 
           {/* WORDS FROM CHAIRMAN */}
           <div className="mt-10 p-4 md:p-8">
-            <h1 className="headings text-5xl md:text-6xl uppercase">Sovereignty</h1>
+            <h1 className="headings text-5xl md:text-6xl capitalize">Sovereignty</h1>
             <div className=" mb-10">
             <img src={trishul} alt="" className="w-80 md:px-0"/>
             </div>
