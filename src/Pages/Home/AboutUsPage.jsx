@@ -7,6 +7,7 @@ import media2 from '../../assets/media2.png'
 import Navbar from "../../Components/Home/Navbar";
 import image from '../../assets/haridwar2.png'
 import trishul from '../../assets/trishul.png'
+import RedefineOwner from '../../assets/RedefineOwner.jpg'
 
 const AboutUsPage = () => {
 
@@ -91,8 +92,8 @@ const AboutUsPage = () => {
               </div>
               <div className="flex flex-col col-span-2 items-center">
             
-                <img src="https://i.pinimg.com/736x/e6/cc/1e/e6cc1ebd76c6855de129e7d7c862f6af.jpg" alt="" className="w-60  " />
-                <p className="font-bold text-2xl mt-12 ml-20 headings">Mr. Chander Mohan</p>
+                <img src={RedefineOwner} alt="" className="w-100 rounded-lg" />
+                <p className="font-bold text-2xl mt-8 headings">Mr. Chander Mohan</p>
               </div>
             </div>
           </div>
