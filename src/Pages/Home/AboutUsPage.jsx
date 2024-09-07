@@ -10,9 +10,9 @@ import trishul from '../../assets/trishul.png'
 
 const AboutUsPage = () => {
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <>
@@ -90,8 +90,9 @@ const AboutUsPage = () => {
                 <p>Mr. Chander Mohan, born on 27 May 1984, in Etawah, UP. He is the younger son of the visionary Shri Hotilal and lives with his family in Delhi. Graduated (B.Tech. in Electronics and Communications) BTEC – HIGHER NATIONAL DIPLOMA (HND) In Electrical/Electronic Engineering, U.K. Edxcel</p>
               </div>
               <div className="flex flex-col col-span-2">
-                <img src="" alt="" className=" " />
-                <p className="font-bold text-2xl headings">Mr. Chander Mohan</p>
+                <div className=" relative w-40 h-60 opacity-75 ml-40 bg-primary"></div>
+                <img src="https://i.pinimg.com/736x/e6/cc/1e/e6cc1ebd76c6855de129e7d7c862f6af.jpg" alt="" className="absolute w-40  ml-28 mt-10 z-10 " />
+                <p className="font-bold text-2xl mt-12 ml-20 headings">Mr. Chander Mohan</p>
               </div>
             </div>
           </div>
