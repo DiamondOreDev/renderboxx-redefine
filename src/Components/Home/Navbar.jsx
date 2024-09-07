@@ -18,6 +18,15 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+    // Scroll to section
+    const scrollToSection = (id) => {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    
   useEffect(() => {
     if (location.hash === "#projects") {
       scrollToSection("projects");
@@ -26,6 +35,7 @@ const Navbar = () => {
     }
   }, [location]);
 
+
   const changeBackground = () => {
     if (window.scrollY >= 80) {
       setNavbar(true);
@@ -33,13 +43,13 @@ const Navbar = () => {
       setNavbar(false);
     }
   };
-
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
     return () => {
       window.removeEventListener("scroll", changeBackground);
     };
   }, []);
+
 
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -118,7 +128,7 @@ const Navbar = () => {
               Projects
             </span>
             {showSubmenu && (
-              <div className="absolute top-full mt-2 w-48 bg-gray-800 rounded-md shadow-lg transition-opacity duration-300 ease-in-out opacity-100 border-t-2 border-primary">
+              <div className="absolute top-full mt-2 w-48 bg-black rounded-md shadow-lg transition-opacity duration-300 ease-in-out opacity-100 border-t-2 border-primary">
                 <Link
                   to={"/haridwarparadise"}
                   target="_blank"
