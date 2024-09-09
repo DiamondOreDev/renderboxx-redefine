@@ -10,14 +10,14 @@ import trishul from "../../assets/trishul.png";
 import RedefineOwner from "../../assets/RedefineOwner.jpg";
 
 const AboutUsPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <>
       <Navbar />
-      <div className="relative h-screen">
+      <div className="relative">
         <div className="relative  w-full h-2/3">
           <img
             src={image} // Replace with your image URL
@@ -71,21 +71,17 @@ const AboutUsPage = () => {
               <img src={trishul} alt="" className="w-80 md:px-0" />
             </div>
             <div className="flex md:flex justify-between md:px-20 md:block hidden">
-              <div className="border-4 border-gray-300  rounded-lg p-2">
-                <div className="flex "> 
+              <div className="  rounded-lg p-2">
+                {/* <div className="flex "> 
                   <div className="w-5 h-5 bg-black rounded-full"></div>
                   <div className="w-5 h-5 bg-black rounded-full ml-2"></div>
                   <div className="w-5 h-5 bg-black rounded-full ml-2"></div>
-                </div>
-                <img src={media1} alt="" className="w-full rounded-lg" />
+                </div> */}
+                <img src={media1} alt="" className="w-full rounded-lg p-4 bg-primary" />
               </div>
-              <div className="border-4 border-gray-300 rounded-lg p-2">
-              <div className="flex "> 
-                  <div className="w-5 h-5 bg-black rounded-full"></div>
-                  <div className="w-5 h-5 bg-black rounded-full ml-2"></div>
-                  <div className="w-5 h-5 bg-black rounded-full ml-2"></div>
-                </div>
-                <img src={media2} alt="" className="w-full rounded-lg" />
+              <div className=" rounded-lg p-2">
+            
+                <img src={media2} alt="" className="w-full rounded-lg bg-primary p-4" />
               </div>
             </div>
 
@@ -104,7 +100,7 @@ const AboutUsPage = () => {
             <div className=" mb-10">
               <img src={trishul} alt="" className="w-80 md:px-0" />
             </div>
-            <div className="grid md:grid-cols-6 gap-4">
+            <div className="grid md:grid-cols-6 gap-6 ">
               <div className="col-span-4 text-justify text-lg text-gray-700">
                 <p>
                   Founded by Mr. Chander Mohan, the Redefine Group has a leading
@@ -127,9 +123,9 @@ const AboutUsPage = () => {
                   Electrical/Electronic Engineering, U.K. Edxcel
                 </p>
               </div>
-              <div className="flex flex-col col-span-2 items-center">
+              <div className="flex flex-col col-span-2 items-center  md:-mt-10">
                 <img src={RedefineOwner} alt="" className="w-100 rounded-lg" />
-                <p className="font-bold text-2xl mt-8 headings">
+                <p className="font-bold text-2xl mt-8 headings ">
                   Mr. Chander Mohan
                 </p>
               </div>
