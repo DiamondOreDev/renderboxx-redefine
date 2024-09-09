@@ -10,9 +10,9 @@ import trishul from "../../assets/trishul.png";
 import RedefineOwner from "../../assets/RedefineOwner.jpg";
 
 const AboutUsPage = () => {
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
