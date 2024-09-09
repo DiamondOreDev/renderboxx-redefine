@@ -100,8 +100,8 @@ const AboutUsPage = () => {
             <div className=" mb-10">
               <img src={trishul} alt="" className="w-80 md:px-0" />
             </div>
-            <div className="grid md:grid-cols-6 gap-6 ">
-              <div className="col-span-4 text-justify text-lg text-gray-700">
+            <div className="grid md:grid-cols-6 gap-8  items-center">
+              <div className="col-span-4 text-justify text-xl text-gray-700">
                 <p>
                   Founded by Mr. Chander Mohan, the Redefine Group has a leading
                   presence across real estate, financial services, e-commerce,
@@ -123,7 +123,7 @@ const AboutUsPage = () => {
                   Electrical/Electronic Engineering, U.K. Edxcel
                 </p>
               </div>
-              <div className="flex flex-col col-span-2 items-center  md:-mt-10">
+              <div className="flex flex-col col-span-2 items-center  ">
                 <img src={RedefineOwner} alt="" className="w-100 rounded-lg" />
                 <p className="font-bold text-2xl mt-8 headings ">
                   Mr. Chander Mohan
