@@ -88,6 +88,7 @@ const Navbar = () => {
       scrollToSection(sectionId);
     }
   };
+  
 
   return (
     <nav
@@ -128,7 +129,7 @@ const Navbar = () => {
               Projects
             </span>
             {showSubmenu && (
-              <div className="absolute top-full mt-2 w-48 bg-black rounded-md shadow-lg transition-opacity duration-300 ease-in-out opacity-100 border-t-2 border-primary">
+              <div className="absolute top-full mt-2 w-60 bg-black rounded-md shadow-lg transition-opacity duration-300 ease-in-out opacity-100 border-t-2 border-primary">
                 <Link
                   to={"/haridwarparadise"}
                   target="_blank"
@@ -143,6 +144,38 @@ const Navbar = () => {
                 >
                   Devprayag Paradise
                 </Link>
+
+                <Link
+                  to={"/Candolimlaxfort"}
+                  target="_blank"
+                  className="block px-4 py-2 text-gray-100 hover:bg-gray-700 hover:text-primary transition-all duration-200"
+                >
+                  Candolim Luxfort
+                </Link>
+                <Link
+                  to={"/apparkavenue"}
+                  target="_blank"
+                  className="block px-4 py-2 text-gray-100 hover:bg-gray-700 hover:text-primary transition-all duration-200"
+                >
+                  AP Park Avenue
+                </Link>
+                <Link
+                  to={"/rishikeshparadise"}
+                  target="_blank"
+                  className="block px-4 py-2 text-gray-100 hover:bg-gray-700 hover:text-primary transition-all duration-200"
+                >
+                  Rishikesh Paradise
+                </Link>
+
+
+                <Link
+                  to={"/thefiveresort"}
+                  target="_blank"
+                  className="block px-4 py-2 text-gray-100 hover:bg-gray-700 hover:text-primary transition-all duration-200"
+                >
+                  The Five Resort
+                </Link>
+              
               </div>
             )}
           </div>
