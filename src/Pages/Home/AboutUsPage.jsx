@@ -77,11 +77,11 @@ const AboutUsPage = () => {
                   <div className="w-5 h-5 bg-black rounded-full ml-2"></div>
                   <div className="w-5 h-5 bg-black rounded-full ml-2"></div>
                 </div> */}
-                <img src={media1} alt="" className="w-full rounded-lg p-4 bg-primary" />
+                <img src={media1} alt="" className="w-full rounded-lg p-4 border border-2" />
               </div>
               <div className=" rounded-lg p-2">
             
-                <img src={media2} alt="" className="w-full rounded-lg bg-primary p-4" />
+                <img src={media2} alt="" className="w-full rounded-lg  p-4 border border-2" />
               </div>
             </div>
 
