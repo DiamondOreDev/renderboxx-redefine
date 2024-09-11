@@ -81,7 +81,7 @@ const FeatureSection = () => {
       return (
         <div
           key={index}
-          className="absolute rounded-full overflow-hidden border-2 md:border-4 border-white cursor-pointer"
+          className="absolute rounded-full overflow-hidden  border-2 hover:shadow-xl md:border-4 border-white cursor-pointer"
           style={{
             width: `${imageSize}px`,
             height: `${imageSize}px`,
@@ -110,7 +110,7 @@ const FeatureSection = () => {
         className="relative group"
         style={{ width: `${circleRadius * 2}px`, height: `${circleRadius * 2}px` }}
       >
-        <div className="absolute inset-0 flex justify-center items-center">
+        <div className="absolute inset-0 flex justify-center  items-center">
           {renderFeatureImages(features1)}
         </div>
       </div>

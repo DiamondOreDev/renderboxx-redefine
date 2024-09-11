@@ -6,9 +6,11 @@ import Footer from '../../Components/Project2DevprayagParadise/Footer'
 const Project2HomeMain = () => {
   return (
     <>
+    <div className='h-screen'>
         <Nav/>
         <Hero/>
         <Footer/>
+        </div>
     </>
   )
 }
