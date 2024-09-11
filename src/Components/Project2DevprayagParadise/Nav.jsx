@@ -22,7 +22,7 @@ const Nav = () => {
   return (
     <nav
     className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ${
-      navbar ? 'bg-gray-900 shadow-md opacity-75' : 'bg-transparent'
+      navbar ? '' : 'bg-transparent'
     }`}
   >
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-60">

@@ -16,7 +16,8 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
-          <Route path="/" element={  <HomeMain/>}/>
+        <Route path="/">
+          <Route index element={  <HomeMain/>}/>
           <Route path="/aboutus" element={<AboutUsPage/>}/>
           <Route path="/contactus" element={<ContactUsPage/>}/>
           <Route path="/haridwarparadise" element={<Project1HomeMain/>}/>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/apparkavenue" element={<Project4ApParkAvenue/>}/>
           <Route path="/rishikeshparadise" element={<Project5Rishikexhparadise/>}/>
           <Route path="/thefiveresort" element={<Project6TheFiveResort/>}/>
+          </Route>
       </Routes>
     </BrowserRouter>
    

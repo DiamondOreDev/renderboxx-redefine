@@ -8,6 +8,7 @@ import Navbar from "../../Components/Home/Navbar";
 import image from "../../assets/haridwar2.png";
 import trishul from "../../assets/trishul.png";
 import RedefineOwner from "../../assets/RedefineOwner.jpg";
+import mediafull from '../../assets/mediafull.jpg';
 
 const AboutUsPage = () => {
   useEffect(() => {
@@ -86,7 +87,7 @@ const AboutUsPage = () => {
             </div>
 
             <img
-              src="https://redefinegroup.com/images/Media-Coverage.jpg"
+              src={mediafull}
               alt=""
               className="md:hidden block"
             />
