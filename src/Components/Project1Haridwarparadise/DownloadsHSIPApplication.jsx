@@ -1,7 +1,7 @@
 import React from 'react';
 import map from '../../assets/map.jpg';
 
-import pdfFile from '../../assets/HSIP-Form.pdf';// Replace with the path to your PDF
+import pdffile from '../../assets/HSIP-Form.pdf';// Replace with the path to your PDF
 
 const DownloadsHSIPApplication = () => {
   return (
@@ -19,7 +19,7 @@ const DownloadsHSIPApplication = () => {
               Download HSIP Application Form
             </h1>
             <a
-              href={pdfFile}
+              href={pdffile}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm sm:text-lg md:text-2xl bg-p1 px-4 sm:px-6 py-2 sm:py-3 mt-2 rounded-lg text-white hover:bg-opacity-90 transition-all duration-300"
